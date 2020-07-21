@@ -5,7 +5,6 @@ class CreateUser < ActiveRecord::Migration[5.1]
       t.string :last_name
       t.string :email
       t.string :password_digest
-      t.string :password_confirmation
       t.integer :role, default: 0
     end
   end
