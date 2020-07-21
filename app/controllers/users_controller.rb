@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def create
     new_user = User.create(user_params)
-    flash[:success] = "Hello, #{new_user.first_name} #{new_user.last_name}, thank you for creating an account!"
+    flash[:success] = "Hello #{new_user.first_name} #{new_user.last_name}, thank you for creating an account!"
     redirect_to "/profile"
   end
 

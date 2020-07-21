@@ -20,8 +20,7 @@ describe "User registration form" do
     click_on "Create User"
 
     expect(current_path).to eq("/profile")
-    message = "Hello #{first_name} #{last_name}, thank
-              you for creating an account"
+    message = "Hello #{first_name} #{last_name}, thank you for creating an account"
     expect(page).to have_content(message)
   end
 
