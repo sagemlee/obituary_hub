@@ -1,0 +1,19 @@
+before_install:
+- gem install bundler
+langauge: ruby
+rbenv:
+- 2.5.3
+addons:
+  postgresql: 9.6
+  chrome: stable
+dist: xenial
+script:
+- yarn
+- bundle exec rails db:{create,migrate} RAILS_ENV=test
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: QUsgmMnPKYLbzFchYwqyryY8xvL6evT1KXl7s/4aHpyBMzWDLy0Bh0IlGZAJz5ldcicrJxD70uDU9VEWUrc79AhlbLXvThkJvsF1ye6pfjMhL8QQ1RgXifik7nhIGnBF680Ss1GKiIMRpstysaF2rtjVr9foUO6pQX0UiZjX0DuXy/OOqhl0dyTHDycCFRjy3bCkq11FL4j4XFyFjICEZMj3bGXTL6hnu643VFOS3nrFqBNoADLHwnRycgihLW+wiLSO1B+GsNMy2f7GDvfDPdlsXsmSyrFWFxK9DYm8RZnKVe/5OpZG+E2bTXc4TchN3/x1uZQKfZ8hdcptldoGf8DNHPMLJjTsjyr2ktcZT8zw93RSFdrjAIsD268lNBfT4t8dGjZIE5jeNvlLHoxdSAG5c57dVuLYS/nnlhITxD2tOZzLkttRbyCRxNVRa6/qSmRINCFFg+VhnBcI5bFvVVU4lqKP/IVk5FqT7NmXWisoO9C8tJ0n1NALGg+AQKfCYhSQ7GECV5MrpYMwcnJ66ubRGr583m5tHLzFXbT/uMXJDNKRA7CSu5MF+p2Ofy6KB03Z69/d99IqNAWfRwRW3yb5AZ1fdDPVdtdNE2qDZ++EQhLqelrlQhZEEQNf6UOy3RAHcLBeTGcwjMo5q7pO35lavb/Hf2DmjDByqxY3SKs=
+  app: obituary-hub
+  run: rails db:migrate
