@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
    get "/", to: "welcome#index"
 
-   resources :users, only: :new
+
+   resources :users, only: [:new, :create]
 end
