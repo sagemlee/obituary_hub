@@ -12,9 +12,9 @@
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-<% flash.each do |name, msg| %>
-<%= msg %>
-<% end %>
+    <% flash.each do |name, msg| %>
+    <%= msg %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
