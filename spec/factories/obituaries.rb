@@ -7,5 +7,6 @@ FactoryBot.define do
     state { "MyString" }
     description { "MyString" }
     image_url { "https://image.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg" }
+    user
   end
 end
