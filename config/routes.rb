@@ -6,5 +6,8 @@ Rails.application.routes.draw do
    post "/login", to: "sessions#create"
 
    get '/profile', to: "users#show"
-   resources :users, only: [:new, :create]
+   resources :users, only: [:new, :create] do
+     resources :covid, only: :index, as: "covid", controller: "users/covid"
+   end
+
 end
