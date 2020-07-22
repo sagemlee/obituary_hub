@@ -9,49 +9,45 @@
   </head>
 
   <body>
-  <nav class="navbar navbar-expand-lg navbar-light style="background-color: #e3f2fd;">
-
-    <h1><a class="navbar-brand" href="#">Obituary Hub</a></h1>
-    <nav class="navbar-right navbar-light bg-light">
-      <form class="form-inline">
-        <% if current_user %>
-          <a href="/obituaries/new"><button class="btn btn-sm btn-outline-secondary" type="button">Add Obituary</button></a>
-          <button class="btn btn-sm btn-outline-secondary" type="button">Logout</button>
-        <% else %>
-          <button class="btn btn-sm btn-outline-secondary" type="button">Login</button>
-          <button class="btn btn-sm btn-outline-secondary" type="button">Register</button>
-        <% end %>
-      </form>
-    </nav>
-  </nav>
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light style="background-color: #e3f2fd;">
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">All Obituaries <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">COVID-19 Obituaries</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Recently Published</a>
-        </li>
-      </ul>
+    <nav1 class="navbar navbar-expand-lg navbar-light style="background-color: #e3f2fd;">
+      <h1><a class="navbar-brand" href="/">Obituary Hub</a></h1>
+      <nav2 class="navbar-right navbar-light bg-light">
+        <form class="form-inline">
+          <% if current_user %>
+            <button class="btn btn-sm btn-outline-secondary" type="button">Logout</button>
+            <a href="/obituaries/new"><button class="btn btn-sm btn-outline-secondary" type="button">Add Obituary</button></a>
+          <% else %>
+            <button class="btn btn-sm btn-outline-secondary" type="button">Login</button>
+            <button class="btn btn-sm btn-outline-secondary" type="button">Register</button>
+          <% end %>
+        </form>
+      </nav2>
+    </nav1>
+    <nav3 class="navbar navbar-expand-lg navbar-light bg-light style="background-color: #e3f2fd;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/obituaries">All Obituaries <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/obituaries/covid-19">COVID-19 Obituaries</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/obituaries/recent">Recently Published</a>
+          </li>
+        </ul>
         <form class="form-inline">
           <input class="form-control mr-sm-2" type="search" placeholder="Search by Name" aria-label="Search">
           <button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
         <form class="form-inline">
-          <a class="nav-link" href="#">Advanced Search Options</a>
+          <a class="nav-link" href="/search/advanced">Advanced Search Options</a>
         </form>
     </div>
-  </nav>
+  </nav3>
 <% flash.each do |name, msg| %>
 <%= msg %>
 <% end %>
