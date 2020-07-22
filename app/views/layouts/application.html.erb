@@ -45,8 +45,11 @@
         <form class="form-inline">
           <a class="nav-link" href="/search/advanced">Advanced Search Options</a>
         </form>
-      </div>
-    </nav3>
+    </div>
+  </nav3>
+<% flash.each do |name, msg| %>
+<%= msg %>
+<% end %>
     <%= yield %>
   </body>
 </html>
