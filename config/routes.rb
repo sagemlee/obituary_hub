@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
    get '/profile', to: "users#show"
    resources :users, only: [:new, :create]
-   resources :obituaries, only: [:new]
-   get "/obituaries", to: "obituaries#index"
+   resources :obituaries, only: [:index, :new, :create]
+   # get "/obituaries", to: "obituaries#index"
    namespace :obituaries do
      get 'covid-19', to: 'covid#index'
      get 'recent', to: 'recent#index'
