@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         flash[:notice] = "You are now logged in as #{user.first_name}"
         redirect_to "/profile"
       else
-      flash[:error] = "The credentitals you have entered are invalid"
+      flash[:notice] = user.errors.full_messages.join(". ").to_s
       redirect_to "/login"
     end
   end

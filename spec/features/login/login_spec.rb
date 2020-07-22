@@ -10,10 +10,7 @@ describe "Visitor Login Page" do
       })
 
   visit '/'
-
-  # within ".login" do
-    click_on "Login"
-  # end
+  click_on "Login"
   expect(current_path).to eq("/login")
 
   fill_in :email, with: user.email
@@ -64,7 +61,45 @@ describe "Visitor Login Page" do
   end
 
   it "visitor leaves field blank" do
-    
+    user = User.create({
+      first_name: "Bob",
+      last_name: "Bobby",
+      email: "jobbobby@bobby.com",
+      password: "password",
+      })
+
+      visit '/login'
+
+      fill_in :email, with: "jobbobby@bobby.com"
+
+
+      click_on "Submit"
+
+      expect(current_path).to eq("/login")
+      expect(page).to have_content("password cannot be empty")
+  end
+
+  it "can logout" do
+    user = User.create({
+      first_name: "Bob",
+      last_name: "Bobby",
+      email: "bobbobby@bobby.com",
+      password: "password",
+      })
+
+  visit '/'
+  click_on "Login"
+  expect(current_path).to eq("/login")
+
+  fill_in :email, with: user.email
+  fill_in :password, with: user.password
+
+  click_on "Submit"
+
+  click_on "Logout"
+
+  expect(current_path).to eq("/")
+  expect(current_user).to eq(nil)
   end
 
 
