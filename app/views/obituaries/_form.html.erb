@@ -7,7 +7,7 @@
   <%= f.text_field :last_name %>
 
   <%= f.label :age %>
-  <%= f.text_field :age %>
+  <%= f.number_field_tag :age, min: 0, max: 150 %>
 
   <%= f.label :city %>
   <%= f.text_field :city %>
@@ -16,7 +16,7 @@
   <%= f.text_field :state %>
 
   <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.text_field :description, :size => 150 %>
 
   <%= f.submit %>
 <% end %>

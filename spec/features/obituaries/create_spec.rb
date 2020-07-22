@@ -20,8 +20,8 @@ describe "As a registered user" do
     fill_in :age, with: 100
     fill_in :city, with: 'Denver'
     fill_in :state, with: 'Colorado'
-    # page.execute_script("$('#person_birthdate').val('21/12/1980')")
-    # page.execute_script("$('#person_deathhdate').val('21/12/2012')")
+    fill_in :image_url, with: 'https://st.depositphotos.com/1763281/2304/i/950/depositphotos_23040102-stock-photo-smiling-man-with-thumbs-up.jpg'
+
     click_on "Create Obituary"
 
     obituary = Obituary.last
@@ -32,7 +32,5 @@ describe "As a registered user" do
     expect(page).to have_content(description)
     expect(page).to have_content(obituary.age)
     expect(page).to have_content(obituary.city)
-    expect(page).to have_content(obituary.s)
-    # Add expectation for dates
   end
 end
