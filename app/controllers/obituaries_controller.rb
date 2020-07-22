@@ -21,6 +21,10 @@ class ObituariesController < ApplicationController
     @obituary = Obituary.find(params[:id])
   end
 
+  def edit
+    @obituary = Obituary.find(params[:id])
+  end
+
   private
 
   def obituary_params

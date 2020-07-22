@@ -13,7 +13,7 @@ describe "As a registered user" do
     visit obituary_path(obituary.id)
 
     click_link "Edit"
-    expect(current_path).to eq('/obituaries/edit')
+    expect(current_path).to eq("/obituaries/#{obituary.id}/edit")
 
     fill_in 'obituary[first_name]', with: first_name
     fill_in 'obituary[last_name]', with: last_name
@@ -26,7 +26,6 @@ describe "As a registered user" do
     expect(page).to have_content(first_name)
     expect(page).to have_content(last_name)
     expect(page).to have_content(description)
-
   end
 
 end
