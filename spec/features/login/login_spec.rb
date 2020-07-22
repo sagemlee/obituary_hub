@@ -41,7 +41,7 @@ describe "Visitor Login Page" do
       click_on "Submit"
 
       expect(current_path).to eq("/login")
-      expect(page).to have_content("You username or password is incorrect")
+      expect(page).to have_content("Your username or password is incorrect")
   end
 
   it "visitor recieves error if no information is entered"
