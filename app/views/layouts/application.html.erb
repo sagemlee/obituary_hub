@@ -15,6 +15,7 @@
     <nav class="navbar-right navbar-light bg-light">
       <form class="form-inline">
         <% if current_user %>
+          <a href="/obituaries/new"><button class="btn btn-sm btn-outline-secondary" type="button">Add Obituary</button></a>
           <button class="btn btn-sm btn-outline-secondary" type="button">Logout</button>
         <% else %>
           <button class="btn btn-sm btn-outline-secondary" type="button">Login</button>

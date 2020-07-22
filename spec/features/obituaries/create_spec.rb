@@ -10,7 +10,8 @@ describe "As a registered user" do
     description = 'New Obituary Description'
 
     visit '/'
-    click_on "Add Obituary"
+
+    click_link "Add Obituary"
     expect(current_path).to eq('/obituaries/new')
 
     fill_in :first_name, with: first_name
