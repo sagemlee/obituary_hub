@@ -24,7 +24,7 @@ gem 'bootstrap', '~> 4.0.0'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
   gem 'capybara'
@@ -32,7 +32,6 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'simplecov'
 end
-
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
