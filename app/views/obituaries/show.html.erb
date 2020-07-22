@@ -9,3 +9,5 @@
 <h2> State: <%= @obituary.state %> </h2>
 
 <p><%= @obituary.description %></p>
+<br>
+<%= link_to 'Edit', edit_obituary_path(@obituary.id) %>
