@@ -7,8 +7,10 @@ describe "User registration form" do
     last_name = "Johnson"
     email = "email@email.com"
     password = "password"
+    visit "/"
+    click_on "Register"
+    expect(current_path).to eq("/users/new")
 
-    visit "/users/new"
 
     fill_in :first_name, with: first_name
     fill_in :last_name, with: last_name
@@ -16,6 +18,9 @@ describe "User registration form" do
     fill_in :email, with: email
     fill_in :password, with: password
     fill_in :password_verification, with: password
+
+
+
 
     click_on "Create User"
 

@@ -63,7 +63,9 @@ describe "Visitor Login Page" do
       expect(page).to have_content("The credentitals you have entered are invalid")
   end
 
-  it "visitor leaves field blank"
+  it "visitor leaves field blank" do
+    
+  end
 
 
 end
