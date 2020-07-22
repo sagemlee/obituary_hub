@@ -20,7 +20,6 @@ gem 'jquery-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'sprockets-rails'
 gem 'bootstrap', '~> 4.0.0'
-gem 'selenium-webdriver'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -33,7 +32,6 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'simplecov'
 end
-
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
