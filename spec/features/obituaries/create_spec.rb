@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "As a registered user" do
-  it "I can creat a new obituary"do
+  it "I can create a new obituary"do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
@@ -34,5 +34,17 @@ describe "As a registered user" do
     expect(page).to have_content(obituary.city)
     expect(page).to have_content(obituary.state)
     expect(page).to have_css('.obituary-image')
+  end
+
+  it "I can must fill in first and last name when creating a obituary"do
+    user = create(:user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit '/'
+    click_link "Add Obituary"
+
+    click_on "Create Obituary"
+
+    expect(page).to have_content("First name can't be blank and Last name can't be blank")
   end
 end
