@@ -51,7 +51,9 @@
         </form>
     </div>
   </nav>
-
+<% flash.each do |name, msg| %>
+<%= msg %>
+<% end %>
     <%= yield %>
   </body>
 </html>
