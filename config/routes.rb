@@ -3,14 +3,13 @@ Rails.application.routes.draw do
 
    get "/", to: "welcome#index"
 
-
    get '/profile', to: "users#show"
    resources :users, only: [:new, :create]
-   get "/obituaries", to: "obituaries#index"
    namespace :obituaries do
      get 'covid-19', to: 'covid#index'
      get 'recent', to: 'recent#index'
    end
+   resources :obituaries, only: [:index, :new, :create, :show]
    get '/search', to: 'search#index'
    namespace :search do
      get 'advanced', to: 'advanced#index'

@@ -1,0 +1,11 @@
+<div class="obituary-image">
+  <%= image_tag(@obituary.image_url) %>
+</div>
+
+<h1><%="#{@obituary.first_name} #{@obituary.last_name}"%></h1>
+
+<h2> Age: <%= @obituary.age %> </h2>
+<h2> City: <%= @obituary.city %> </h2>
+<h2> State: <%= @obituary.state %> </h2>
+
+<p><%= @obituary.description %></p>
