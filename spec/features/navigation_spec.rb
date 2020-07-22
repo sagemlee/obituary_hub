@@ -33,17 +33,20 @@ RSpec.describe 'Site Navigation' do
         click_link 'Advanced Search'
       end
 
-      expect(current_path).to eq('/obituaries/search/advanced')
+      expect(current_path).to eq('/search/advanced')
     end
 
     it 'I see buttons to login and register' do
-    end
+      visit '/'
 
+      expect(page).to have_content("Login")
+      expect(page).to have_content("Register")
+    end
   end
 
   describe 'As a logged in user' do
-    it 'I see a button to logout' do
-
+    xit 'I see a button to logout' do
+      # leaving this here to fill in once we have the ability to log in a user!
     end
   end
 end
