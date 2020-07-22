@@ -25,6 +25,17 @@ class ObituariesController < ApplicationController
     @obituary = Obituary.find(params[:id])
   end
 
+  def update
+    @obituary = Obituary.find(params[:id])
+    if @obituary.update(obituary_params)
+      flash[:success] = 'Obituary Updated!'
+      redirect_to obituary_path(@obituary.id)
+    else
+      flash[:error] = @obituary.errors.full_messages.to_sentence
+      render :edit
+    end
+  end
+
   private
 
   def obituary_params
