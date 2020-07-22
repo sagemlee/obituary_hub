@@ -33,5 +33,6 @@ describe "As a registered user" do
     expect(page).to have_content(obituary.age)
     expect(page).to have_content(obituary.city)
     expect(page).to have_content(obituary.state)
+    expect(page).to have_css('.obituary-image')
   end
 end
