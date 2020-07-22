@@ -28,4 +28,19 @@ describe "As a registered user" do
     expect(page).to have_content(description)
   end
 
+  it "I must fill in required fields to edit and obituary"do
+    user = create(:user)
+    obituary = create(:obituary, user_id: user.id)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit obituary_path(obituary.id)
+    click_link "Edit"
+    fill_in 'obituary[first_name]', with: ''
+    fill_in 'obituary[last_name]', with: ''
+
+    click_on "Update Obituary"
+
+    expect(page).to have_content("First name can't be blank and Last name can't be blank")
+  end
+
 end
