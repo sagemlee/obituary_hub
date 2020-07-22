@@ -15,10 +15,10 @@
     <nav class="navbar-right navbar-light bg-light">
       <form class="form-inline">
         <% if current_user %>
-          <button class="btn btn-sm btn-outline-secondary" type="button">Logout</button>
+          <a href="/logout"<button class="btn btn-sm btn-outline-secondary" type="button">Logout</button></a>
         <% else %>
-        <a href="/login"<button class="btn btn-sm btn-outline-secondary" type="button">Login</button></a>
-        <a href="/users/new"<button class="btn btn-sm btn-outline-secondary" type="button">Register</button></a>
+          <a href="/login"<button class="btn btn-sm btn-outline-secondary" type="button">Login</button></a>
+          <a href="/users/new"<button class="btn btn-sm btn-outline-secondary" type="button">Register</button></a>
         <% end %>
       </form>
     </nav>

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
    get "/", to: "welcome#index"
    get "/login", to: "sessions#new"
    post "/login", to: "sessions#create"
-
+   get "/logout", to: "sessions#index"
    get '/profile', to: "users#show"
    resources :users, only: [:new, :create] do
      resources :covid, only: :index, as: "covid", controller: "users/covid"

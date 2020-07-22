@@ -22,7 +22,7 @@ describe "Visitor Login Page" do
   expect(page).to have_content("You are now logged in as #{user.first_name}")
   end
 
-  it "visitor returns to login screen if bad email in entered" do
+  it "visitor returns to login screen if bad email is entered" do
     user = User.create({
       first_name: "Bob",
       last_name: "Bobby",
@@ -76,7 +76,7 @@ describe "Visitor Login Page" do
       click_on "Submit"
 
       expect(current_path).to eq("/login")
-      expect(page).to have_content("password cannot be empty")
+      expect(page).to have_content("The credentitals you have entered are invalid")
   end
 
   it "can logout" do
@@ -88,6 +88,7 @@ describe "Visitor Login Page" do
       })
 
   visit '/'
+  expect(page).not_to have_content("Logout")
   click_on "Login"
   expect(current_path).to eq("/login")
 
@@ -99,7 +100,9 @@ describe "Visitor Login Page" do
   click_on "Logout"
 
   expect(current_path).to eq("/")
-  expect(current_user).to eq(nil)
+  expect(page).to have_content("You have logged out")
+  expect(page).to have_content("Login")
+  expect(page).not_to have_content("Logout")
   end
 
 
