@@ -17,8 +17,7 @@
         <% if current_user %>
           <button class="btn btn-sm btn-outline-secondary" type="button">Logout</button>
         <% else %>
-        <%= button_to "Login", "/login", method: :get, form_class: "btn btn-sm btn-outline-secondary" %>
-
+        <a href="/login"<button class="btn btn-sm btn-outline-secondary" type="button">Login</button></a>
           <button class="btn btn-sm btn-outline-secondary" type="button">Register</button>
         <% end %>
       </form>

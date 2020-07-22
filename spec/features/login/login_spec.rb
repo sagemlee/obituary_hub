@@ -25,7 +25,7 @@ describe "Visitor Login Page" do
   expect(page).to have_content("You are now logged in as #{user.first_name}")
   end
 
-  it "visitor returns to login screen if bad information in entered" do
+  it "visitor returns to login screen if bad email in entered" do
     user = User.create({
       first_name: "Bob",
       last_name: "Bobby",
@@ -36,13 +36,34 @@ describe "Visitor Login Page" do
       visit '/login'
 
       fill_in :email, with: "Hello"
+      fill_in :password, with: "password"
+
+      click_on "Submit"
+
+      expect(current_path).to eq("/login")
+      expect(page).to have_content("The credentitals you have entered are invalid")
+  end
+
+  it "visitor recieves error if bad password is entered" do
+    user = User.create({
+      first_name: "Bob",
+      last_name: "Bobby",
+      email: "jobbobby@bobby.com",
+      password: "password",
+      })
+
+      visit '/login'
+
+      fill_in :email, with: "jobbobby@bobby.com"
       fill_in :password, with: "hi"
 
       click_on "Submit"
 
       expect(current_path).to eq("/login")
-      expect(page).to have_content("Your username or password is incorrect")
+      expect(page).to have_content("The credentitals you have entered are invalid")
   end
 
-  it "visitor recieves error if no information is entered"
+  it "visitor leaves field blank"
+
+
 end
