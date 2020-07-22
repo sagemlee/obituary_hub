@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "As a registered user" do
-  it "I can creat a new obituary", :js => true do
+  it "I can creat a new obituary"do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
@@ -9,7 +9,7 @@ describe "As a registered user" do
     last_name = 'New Last Name'
     description = 'New Obituary Description'
 
-    visit root_path
+    visit '/'
     click_on "Add Obituary"
     expect(current_path).to eq('/obituaries/new')
 
@@ -29,6 +29,9 @@ describe "As a registered user" do
     expect(page).to have_content(first_name)
     expect(page).to have_content(last_name)
     expect(page).to have_content(description)
+    expect(page).to have_content(obituary.age)
+    expect(page).to have_content(obituary.city)
+    expect(page).to have_content(obituary.s)
     # Add expectation for dates
   end
 end
