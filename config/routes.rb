@@ -9,7 +9,7 @@ Rails.application.routes.draw do
      get 'covid-19', to: 'covid#index'
      get 'recent', to: 'recent#index'
    end
-   resources :obituaries, except: [:destroy]
+   resources :obituaries
    get '/search', to: 'search#index'
    namespace :search do
      get 'advanced', to: 'advanced#index'

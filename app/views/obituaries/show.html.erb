@@ -9,5 +9,6 @@
 <h2> State: <%= @obituary.state %> </h2>
 
 <p><%= @obituary.description %></p>
-<br>
-<%= link_to 'Edit', edit_obituary_path(@obituary.id) %>
+
+<p><%= link_to 'Edit', edit_obituary_path(@obituary.id) %></p>
+<p><%= link_to 'Delete', "/obituaries/#{@obituary.id}", method: :delete %></p>

@@ -36,6 +36,12 @@ class ObituariesController < ApplicationController
     end
   end
 
+  def destroy
+    Obituary.find(params[:id]).destroy
+    flash[:notice] = 'Obituary Deleted'
+    redirect_to '/'
+  end
+
   private
 
   def obituary_params
