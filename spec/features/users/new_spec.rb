@@ -17,7 +17,7 @@ describe "User registration form" do
 
     fill_in :email, with: email
     fill_in :password, with: password
-    fill_in :password_verification, with: password
+    fill_in :password_confirmation, with: password
 
     click_on "Create User"
 
@@ -49,7 +49,7 @@ describe "User registration form" do
 
       fill_in :email, with: email
       fill_in :password, with: password
-      fill_in :password_verification, with: password
+      fill_in :password_confirmation, with: password
 
       click_on "Create User"
 
@@ -73,7 +73,7 @@ describe "User registration form" do
 
     fill_in :email, with: email
     fill_in :password, with: password
-    fill_in :password_verification, with: password
+    fill_in :password_confirmation, with: password
 
     click_on "Create User"
 
@@ -96,12 +96,12 @@ describe "User registration form" do
 
     fill_in :email, with: email
     fill_in :password, with: password
-    fill_in :password_verification, with: password
+    fill_in :password_confirmation, with: "Hi"
 
     click_on "Create User"
 
     expect(current_path).to eq("/users/new")
-    expect(page).to have_content("")
+    expect(page).to have_content("Password confirmation doesn't match Password")
 
 
   end
