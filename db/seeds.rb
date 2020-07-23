@@ -20,7 +20,7 @@ user = User.create!({
     city: Faker::Address.city,
     state: Faker::Address.state_abbr,
     description: Faker::Lorem.paragraph(sentence_count: 10),
-    image_url: Faker::LoremFlickr.image(size: "50x60", search_terms: ['nature']),
+    image_url: Faker::Fillmurray.unique.image,
     user_id: user.id
   })
 end
