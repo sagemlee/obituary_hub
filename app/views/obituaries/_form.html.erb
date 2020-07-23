@@ -1,25 +1,51 @@
-<%= form_for @obituary do |f| %>
+<div class="container">
 
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name  %>
+  <h1><%= action %> Obituary</h1>
 
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
+  <%= form_for @obituary, class: 'submit-form' do |f| %>
 
-  <%= f.label :age %>
-  <%= f.number_field :age, min: 0, max: 150 %>
+    <div class="form-group row">
+      <div class="col">
+          <%= f.label 'First Name (required)', class: 'col-form-label-lg'%>
+          <%= f.text_field :first_name,  class: "form-control", placeholder: "First name", :required => true%>
+      </div>
+    </div>
 
-  <%= f.label :city %>
-  <%= f.text_field :city %>
+    <div class="form-group row">
+      <div class="col">
+          <%= f.label 'Last Name (required)', class: 'col-form-label-lg' %>
+          <%= f.text_field :last_name, class: "form-control", placeholder: "Last name", :required => true %>
+      </div>
+    </div>
 
-  <%= f.label :state %>
-  <%= f.text_field :state %>
+    <div class="form-group row">
+      <div class="col">
+      <%= f.label 'Image', class: 'col-form-label-lg' %>
+      <%= f.text_field :image_url, class: "form-control", placeholder: "Image Url" %>
+      </div>
+    </div>
 
-  <%= f.label :description %>
-  <%= f.text_field :description, :size => 150 %>
+    <div class="form-group row">
+      <div class="col-md-8 mb-3">
+        <%= f.label :city, class: 'col-form-label-lg' %>
+        <%= f.text_field :city, class: "form-control", placeholder: 'City' %>
+      </div>
+      <div class="col-md-4 mb-3" id="state-select">
+        <%= f.label :state, class: 'col-form-label-lg' %>
+        <%= f.select :state, options_for_select(us_states), { }, {class: 'custom-select' } %>
+      </div>
+    </div>
 
-  <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
+    <div class="form-group">
+      <%= f.label :description, class: 'col-form-label-lg'%>
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
 
-  <%= f.submit %>
-<% end %>
+    <div class="form-group" id="age-select">
+      <%= f.label :age %>
+      <%= f.select :age, options_for_select((0..150), 100), { }, {class: 'custom-select' } %>
+    </div>
+
+    <%= f.submit class: "btn btn-primary"%>
+  <% end %>
+</div>
