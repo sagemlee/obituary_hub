@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     get "/", to: "welcome#index"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#delete"
+    delete "/logout", to: "sessions#destroy"
     get '/profile', to: "users#show"
    resources :users, only: [:new, :create]
    namespace :obituaries do
