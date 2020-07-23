@@ -3,6 +3,7 @@ class ObituariesController < ApplicationController
   end
 
   def new
+    render_404 if !current_user
     @obituary = Obituary.new
   end
 

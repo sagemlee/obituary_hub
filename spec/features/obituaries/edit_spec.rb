@@ -51,7 +51,7 @@ describe "As a visitor" do
     expect(page).to_not have_content("Edit")
   end
 
-  it "I cannot access the obituary edit for" do
+  it "I cannot access the obituary edit form" do
     obituary = create(:obituary)
     visit edit_obituary_path(obituary.id)
     expect(page).to have_content('The page you were looking for doesn\'t exist (404)')
