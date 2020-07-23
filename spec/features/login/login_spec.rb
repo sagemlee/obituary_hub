@@ -38,7 +38,7 @@ describe "Visitor Login Page" do
       click_on "Submit"
 
       expect(current_path).to eq("/login")
-      expect(page).to have_content("The credentitals you have entered are invalid")
+      expect(page).to have_content("The credentials you have entered are invalid")
   end
 
   it "visitor recieves error if bad password is entered" do
@@ -57,7 +57,7 @@ describe "Visitor Login Page" do
       click_on "Submit"
 
       expect(current_path).to eq("/login")
-      expect(page).to have_content("The credentitals you have entered are invalid")
+      expect(page).to have_content("The credentials you have entered are invalid")
   end
 
   it "visitor leaves field blank" do
@@ -76,7 +76,7 @@ describe "Visitor Login Page" do
       click_on "Submit"
 
       expect(current_path).to eq("/login")
-      expect(page).to have_content("The credentitals you have entered are invalid")
+      expect(page).to have_content("The credentials you have entered are invalid")
   end
 
   it "can logout" do

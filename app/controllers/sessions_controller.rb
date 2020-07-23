@@ -10,12 +10,12 @@ class SessionsController < ApplicationController
         flash[:notice] = "You are now logged in as #{user.first_name}"
         redirect_to "/profile"
       else
-        flash[:notice] = "The credentitals you have entered are invalid"
+        flash[:notice] = "The credentials you have entered are invalid"
         redirect_to "/login"
     end
   end
 
-  def index
+  def delete
 
     session.delete(:user_id)
     flash[:notice] = "You have logged out"
