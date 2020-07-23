@@ -1,16 +1,17 @@
 <div class="obituary-image">
   <%= image_tag(@obituary.image_url) %>
 </div>
+<div class="obituary-show">
+  <h1><%="#{@obituary.first_name} #{@obituary.last_name}"%></h1>
 
-<h1><%="#{@obituary.first_name} #{@obituary.last_name}"%></h1>
+  <h2> Age: <%= @obituary.age %> </h2>
+  <h2> City: <%= @obituary.city %> </h2>
+  <h2> State: <%= @obituary.state %> </h2>
 
-<h2> Age: <%= @obituary.age %> </h2>
-<h2> City: <%= @obituary.city %> </h2>
-<h2> State: <%= @obituary.state %> </h2>
+  <p><%= @obituary.description %></p>
 
-<p><%= @obituary.description %></p>
-
-<% if current_user && current_user.has_obituary?(@obituary) %>
-  <p><%= link_to 'Edit', edit_obituary_path(@obituary.id) %></p>
-  <p><%= link_to 'Delete', "/obituaries/#{@obituary.id}", method: :delete %></p>
-<% end %>
+  <% if current_user && current_user.has_obituary?(@obituary) %>
+    <p><%= link_to 'Edit', edit_obituary_path(@obituary.id) %></p>
+    <p><%= link_to 'Delete', "/obituaries/#{@obituary.id}", method: :delete %></p>
+  <% end %>
+</div>
