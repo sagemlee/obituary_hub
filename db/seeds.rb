@@ -5,14 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-100.times do
-  Obituary.create(
+user = User.create!({
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    age: Faker::Number(within(range: 45..110)),
+    email: "example@email.com",
+    password: "password_digest"
+  })
+
+100.times do
+  Obituary.create!({
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    age: Faker::Number.within(range: 45..110),
     city: Faker::Address.city,
     state: Faker::Address.state_abbr,
-    description: Faker::Lorem.paragraph(sentence_count: 5),
-    image_url: Faker::LoremFlicker.image(size: "50x60", search_terms: ['nature'])
-  )
-end 
+    description: Faker::Lorem.paragraph(sentence_count: 10),
+    image_url: Faker::LoremFlickr.image(size: "50x60", search_terms: ['nature']),
+    user_id: user.id
+  })
+end
