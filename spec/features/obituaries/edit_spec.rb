@@ -45,7 +45,6 @@ describe "As a registered user" do
 
   it "I cannot edit another user's obituary" do
     user1 = create(:user)
-    obituary1 = create(:obituary, user_id: user1.id)
     user2 = create(:user)
     obituary2 = create(:obituary, user_id: user2.id)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
