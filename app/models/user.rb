@@ -4,4 +4,8 @@ class User < ApplicationRecord
   has_many :obituaries
 
   has_secure_password
+
+  def has_obituary?(obituary)
+    obituaries.include?(obituary)
+  end
 end

@@ -6,6 +6,6 @@ FactoryBot.define do
     city { "MyString" }
     state { "MyString" }
     description { "MyString" }
-    image_url { "MyString" }
+    user
   end
 end

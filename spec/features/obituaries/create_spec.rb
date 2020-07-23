@@ -17,9 +17,13 @@ describe "As a registered user" do
     fill_in 'obituary[first_name]', with: first_name
     fill_in 'obituary[last_name]', with: last_name
     fill_in 'obituary[description]', with: description
-    fill_in 'obituary[age]', with: 100
+    within '#age-select' do
+      page.select(100)
+    end
     fill_in 'obituary[city]', with: 'Denver'
-    fill_in 'obituary[state]', with: 'Colorado'
+    within '#state-select' do
+      page.select('CO')
+    end
     fill_in 'obituary[image_url]', with: 'https://st.depositphotos.com/1763281/2304/i/950/depositphotos_23040102-stock-photo-smiling-man-with-thumbs-up.jpg'
 
     click_on "Create Obituary"

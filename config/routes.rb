@@ -11,7 +11,7 @@ Rails.application.routes.draw do
      get 'covid-19', to: 'covid#index'
      get 'recent', to: 'recent#index'
    end
-   resources :obituaries, only: [:index, :new, :create, :show]
+   resources :obituaries
    get '/search', to: 'search#index'
    namespace :search do
      get 'advanced', to: 'advanced#index'
