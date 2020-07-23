@@ -22,6 +22,7 @@ class ObituariesController < ApplicationController
   end
 
   def edit
+    render_404 if !current_user
     @obituary = Obituary.find(params[:id])
   end
 
