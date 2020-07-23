@@ -12,7 +12,7 @@
   <nav1 class="navbar navbar-expand-lg navbar-light style="background-color: #e3f2fd;">
 
      <h1><a class="navbar-brand" href="/">Obituary Hub</a></h1>
-    <nav class="navbar-right navbar-light bg-light">
+    <nav2 class="navbar-right navbar-light bg-light">
       <form class="form-inline">
         <% if current_user %>
           <%= link_to "Logout", "/logout", method: :delete, class: "btn btn-sm btn-outline-secondary" %>
@@ -22,8 +22,8 @@
           <a href="/users/new"<button class="btn btn-sm btn-outline-secondary" type="button">Register</button></a>
         <% end %>
       </form>
-    </nav>
-  </nav>
+    </nav2>
+  </nav1>
 
   <nav3 class="navbar navbar-expand-lg navbar-light bg-light style="background-color: #e3f2fd;">
 
