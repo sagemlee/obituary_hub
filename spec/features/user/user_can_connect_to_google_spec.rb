@@ -52,24 +52,13 @@ describe 'Registration page' do
     })
   end
 
-  it 'displays link to connect to google' do
+  it "creates new user with oauth" do
 
     OmniAuth.config.test_mode = true
 
     visit 'users/new'
     click_on 'Sign in with your Google Account'
-
     expect(current_path).to eq("/auth/google_oauth2")
-  end 
-
-  xit "creates new user with oauth" do
-    visit 'users/new'
-    click_on 'Sign in with your Google Account'
-
-    
-
-    expect(current_path).to eq("/auth/google_oauth2/callback")
-    expect
 
   end
 end
