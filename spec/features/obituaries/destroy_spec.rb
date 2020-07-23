@@ -14,3 +14,11 @@ describe "As a registered user" do
     expect(user.obituaries).to eq([])
   end
 end
+
+describe "As a visitor" do
+  it "I see no link to delete" do
+    obituary = create(:obituary)
+    visit obituary_path(obituary.id)
+    expect(page).to_not have_content("Delete")
+  end
+end

@@ -10,5 +10,7 @@
 
 <p><%= @obituary.description %></p>
 
-<p><%= link_to 'Edit', edit_obituary_path(@obituary.id) %></p>
-<p><%= link_to 'Delete', "/obituaries/#{@obituary.id}", method: :delete %></p>
+<% if current_user && current_user.obituaries.include?(@obituary) %>
+  <p><%= link_to 'Edit', edit_obituary_path(@obituary.id) %></p>
+  <p><%= link_to 'Delete', "/obituaries/#{@obituary.id}", method: :delete %></p>
+<% end %>
