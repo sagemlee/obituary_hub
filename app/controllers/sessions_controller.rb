@@ -5,8 +5,11 @@ class SessionsController < ApplicationController
 
   def create
     if request.env['omniauth.auth']
-      user = User.create_with_omniauth(request.env[‘omniauth.auth’])
-      session[:user_id] = user.id    
+      user = User.create_with_omniauth(request.env['omniauth.auth'])
+      session[:user_id] = user.id
+      binding.pry
+      user.save!
+      flash[:notice] = "You are now logged in as #{user.first_name}"
       redirect_to "/profile" 
     else 
       user = User.find_by(email: params[:email])
