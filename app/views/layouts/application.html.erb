@@ -4,18 +4,19 @@
     <title>ObituaryHub</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-  <nav class="navbar navbar-expand-lg navbar-light style="background-color: #e3f2fd;">
+  <nav1 class="navbar navbar-expand-lg navbar-light style="background-color: #e3f2fd;">
 
-    <h1><a class="navbar-brand" href="#">Obituary Hub</a></h1>
+     <h1><a class="navbar-brand" href="/">Obituary Hub</a></h1>
     <nav class="navbar-right navbar-light bg-light">
       <form class="form-inline">
         <% if current_user %>
           <a href="/logout"<button class="btn btn-sm btn-outline-secondary" type="button">Logout</button></a>
+            <a href="/obituaries/new"><button class="btn btn-sm btn-outline-secondary" type="button">Add Obituary</button></a>
         <% else %>
           <a href="/login"<button class="btn btn-sm btn-outline-secondary" type="button">Login</button></a>
           <a href="/users/new"<button class="btn btn-sm btn-outline-secondary" type="button">Register</button></a>
@@ -24,7 +25,7 @@
     </nav>
   </nav>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light style="background-color: #e3f2fd;">
+  <nav3 class="navbar navbar-expand-lg navbar-light bg-light style="background-color: #e3f2fd;">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -33,13 +34,13 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">All Obituaries <span class="sr-only">(current)</span></a>
+         <a class="nav-link" href="/obituaries">All Obituaries <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">COVID-19 Obituaries</a>
+          <a class="nav-link" href="/obituaries/covid-19">COVID-19 Obituaries</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Recently Published</a>
+        <a class="nav-link" href="/obituaries/recent">Recently Published</a>
         </li>
       </ul>
         <form class="form-inline">
