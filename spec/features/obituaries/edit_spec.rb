@@ -42,6 +42,17 @@ describe "As a registered user" do
 
     expect(page).to have_content("First name can't be blank and Last name can't be blank")
   end
+
+  it "I cannot edit another user's obituary" do
+    user1 = create(:user)
+    user2 = create(:user)
+    obituary2 = create(:obituary, user_id: user2.id)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
+    visit obituary_path(obituary2.id)
+    expect(page).to_not have_content("Edit")
+    visit edit_obituary_path(obituary2.id)
+    expect(page).to have_content('The page you were looking for doesn\'t exist (404)')
+  end
 end
 
 describe "As a visitor" do
@@ -49,5 +60,11 @@ describe "As a visitor" do
     obituary = create(:obituary)
     visit obituary_path(obituary.id)
     expect(page).to_not have_content("Edit")
+  end
+
+  it "I cannot access the obituary edit form" do
+    obituary = create(:obituary)
+    visit edit_obituary_path(obituary.id)
+    expect(page).to have_content('The page you were looking for doesn\'t exist (404)')
   end
 end

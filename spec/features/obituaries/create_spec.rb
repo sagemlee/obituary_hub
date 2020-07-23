@@ -52,3 +52,16 @@ describe "As a registered user" do
     expect(page).to have_content("First name can't be blank and Last name can't be blank")
   end
 end
+
+describe "As a visitor" do
+  it "I see no link to add an obituary" do
+    visit '/'
+    expect(page).to_not have_content("Add Obituary")
+  end
+
+  it "I cannot access the obituary create form" do
+    obituary = create(:obituary)
+    visit new_obituary_path(obituary.id)
+    expect(page).to have_content('The page you were looking for doesn\'t exist (404)')
+  end
+end
