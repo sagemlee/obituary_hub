@@ -1,5 +1,5 @@
 <div class="obituary-image">
-  <%= image_tag(@obituary.image_url) %>
+  <%= image_tag(@obituary.image_url) rescue image_tag 'https://image.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg' %>
 </div>
 
 <h1><%="#{@obituary.first_name} #{@obituary.last_name}"%></h1>
