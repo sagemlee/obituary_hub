@@ -23,8 +23,8 @@ class ObituariesController < ApplicationController
   end
 
   def edit
-    render_404 if !current_user
     @obituary = Obituary.find(params[:id])
+    render_404 if !current_user || !current_user.has_obituary?(@obituary)
   end
 
   def update
