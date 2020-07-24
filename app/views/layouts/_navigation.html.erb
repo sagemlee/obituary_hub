@@ -1,31 +1,37 @@
-<nav class="navbar navbar-expand-lg navbar-dark" id="mainNav"">
-  <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">ObituaryHub</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
-      </button>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="mainNav">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <a class="navbar-brand js-scroll-trigger" href="/">ObituaryHub</a>
       <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <% if current_user %>
-              <li class="nav-item"><%= link_to "Logout", "/logout", method: :delete %></li>
-              <!-- <li class="nav-item"><a href="/obituaries/new"><button class="btn btn-sm btn-outline-secondary" type="button">Add Obituary</button></a></li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/obituaries/new">Add Obituary</a>
+              </li> -->
+              <li class="nav-item">
+                <button class="btn btn-lg btn-outline-secondary" type="button"><%= link_to "Logout", "/logout", method: :delete %></button>
+              </li>
             <% else %>
-              <li class="nav-item"><a href="/login">Login</a></li>
-              <li class="nav-item"><a href="/users/new">Register</a><li>
+            <li class="nav-link">
+              <a class="nav-link" href="/users/new">Sign Up</a>
+            </li>
+            <li class="nav-link">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
             <% end %>
           </ul>
       </div>
-  </div>
 </nav>
 
-<nav3 class="navbar navbar-expand-lg navbar-light bg-light style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="secondaryNav">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/obituaries">All Obituaries <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="/obituaries">All Obituaries</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/obituaries/covid-19">COVID-19 Obituaries</a>
@@ -35,11 +41,9 @@
       </li>
     </ul>
     <form class="form-inline">
+      <a class="nav-link" href="/search/advanced">Advanced Search Options</a>
       <input class="form-control mr-sm-2" type="search" placeholder="Search by Name" aria-label="Search">
       <button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
-    <form class="form-inline">
-      <a class="nav-link" href="/search/advanced">Advanced Search Options</a>
-    </form>
 </div>
-</nav3>
+</nav>
