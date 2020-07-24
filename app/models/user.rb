@@ -3,6 +3,7 @@ class User < ApplicationRecord
   validates_presence_of :first_name, :last_name
   has_many :obituaries
 
+  
   has_secure_password validations: false
 
   def has_obituary?(obituary)

@@ -27,7 +27,7 @@ describe "User logs in through facebook" do
         end
 
     it "logs in through registration page" do
-            OmniAuth.config.test_mode = true
+        OmniAuth.config.test_mode = true
 
         first_name = "Sharon"
         last_name = "Moidustein"
@@ -42,7 +42,7 @@ describe "User logs in through facebook" do
     end
 
     it "logs in through login page" do
-            OmniAuth.config.test_mode = true
+        OmniAuth.config.test_mode = true
 
         first_name = "Sharon"
         last_name = "Moidustein"
