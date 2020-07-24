@@ -11,3 +11,6 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 NYT_API_KEY: IDlpS7G6Zp2rKByF3W5Bkt3y4SvSxMBG
+
+FACEBOOK_APP_ID: "2964070867052843"
+FACEBOOK_APP_SECRET: "8f50033b0d5cd4dfcb76ddbfdae33d0d"
