@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "User registration form" do
+describe "User logs in through facebook" do
     before(:each) do 
         OmniAuth.config.mock_auth[:facebook] = nil 
 
@@ -26,7 +26,7 @@ describe "User registration form" do
             }})
         end
 
-    it "Creates a new user through facebook authentication" do
+    it "logs in through registration page" do
             OmniAuth.config.test_mode = true
 
         first_name = "Sharon"
@@ -35,6 +35,21 @@ describe "User registration form" do
         visit "/"
         click_on "Register"
         expect(current_path).to eq("/users/new")
+        click_on "Connect through Facebook"
+
+        expect(current_path).to eq("/profile")
+        expect(page).to have_content("You are now logged in as Sharon")
+    end
+
+    it "logs in through login page" do
+            OmniAuth.config.test_mode = true
+
+        first_name = "Sharon"
+        last_name = "Moidustein"
+
+        visit "/"
+        click_on "Login"
+        expect(current_path).to eq("/login")
         click_on "Connect through Facebook"
 
         expect(current_path).to eq("/profile")
