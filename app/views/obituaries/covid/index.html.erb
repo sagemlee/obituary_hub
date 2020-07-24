@@ -1,1 +1,16 @@
-<h1>COVID-19 Obituaries</h1>
+<div class="container">
+<h1 class="my-4">COVID-19 Obituaries</h1>
+<% @obituaries.each do |obit| %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= link_to image_tag(obit.image_url), "/obituaries/#{obit.id}" %>
+    </div>
+    <div class="col-md-7">
+      <h3><%= "#{obit.first_name} #{obit.last_name}" %></h3>
+      <p><%= obit.description %></p>
+      <a class="btn btn-primary" href= <%= "/obituaries/#{obit.id}" %>>View Obituary</a>
+    </div>
+  </div>
+  <hr>
+<% end %>
+</div>
