@@ -46,6 +46,14 @@
       <%= f.select :age, options_for_select((0..150), 100), { }, {class: 'custom-select' } %>
     </div>
 
+    <div class="form-check" id="covid-select">
+      <%= f.label :covid %>
+      <%= f.check_box :covid  %>
+    </div>
+
+    <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
+
     <%= f.submit class: "btn btn-primary"%>
   <% end %>
 </div>
