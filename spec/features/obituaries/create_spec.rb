@@ -40,6 +40,43 @@ describe "As a registered user" do
     expect(page).to have_css('.obituary-image')
   end
 
+  it "I can create a new obituary for covid"do
+    user = create(:user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    first_name = 'New First Name'
+    last_name = 'New Last Name'
+    description = 'New Obituary Description'
+
+    visit '/'
+
+    click_link "Add Obituary"
+    expect(current_path).to eq('/obituaries/new')
+
+    fill_in 'obituary[first_name]', with: first_name
+    fill_in 'obituary[last_name]', with: last_name
+    fill_in 'obituary[description]', with: description
+    within '#age-select' do
+      page.select(100)
+    end
+    within '#covid' do
+      find("input[type='checkbox'][value='covid']").set(true)
+    end
+    fill_in 'obituary[city]', with: 'Denver'
+    within '#state-select' do
+      page.select('CO')
+    end
+    fill_in 'obituary[image_url]', with: 'https://st.depositphotos.com/1763281/2304/i/950/depositphotos_23040102-stock-photo-smiling-man-with-thumbs-up.jpg'
+
+    click_on "Create Obituary"
+
+    obituary = Obituary.last
+    expect(current_path).to eq("/obituaries/#{obituary.id}")
+    expect(page).to have_content('Obituary Created')
+    expect(page).to have_content("COVID-19")
+
+  end
+
   it "I can must fill in first and last name when creating a obituary"do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
