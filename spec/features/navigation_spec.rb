@@ -5,31 +5,31 @@ RSpec.describe 'Site Navigation' do
     it 'I see a nav bar with links to specific indexes' do
       visit '/'
 
-      within 'nav3' do
+      within '#secondaryNav' do
         click_link 'All Obituaries'
       end
 
       expect(current_path).to eq('/obituaries')
 
-      within 'nav1' do
-        click_link 'Obituary Hub'
+      within '#mainNav' do
+        find('#homepage').click
       end
 
       expect(current_path).to eq('/')
 
-      within 'nav3' do
+      within '#secondaryNav' do
         click_link 'COVID-19 Obituaries'
       end
 
       expect(current_path).to eq('/obituaries/covid-19')
 
-      within 'nav3' do
+      within '#secondaryNav' do
         click_link 'Recently Published'
       end
 
       expect(current_path).to eq('/obituaries/recent')
 
-      within 'nav3' do
+      within '#secondaryNav' do
         click_link 'Advanced Search'
       end
 
@@ -40,7 +40,7 @@ RSpec.describe 'Site Navigation' do
       visit '/'
 
       expect(page).to have_content("Login")
-      expect(page).to have_content("Register")
+      expect(page).to have_content("Sign Up")
     end
   end
 end

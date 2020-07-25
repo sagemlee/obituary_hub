@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe "User logs in through facebook" do
-    before(:each) do 
-        OmniAuth.config.mock_auth[:facebook] = nil 
+    before(:each) do
+        OmniAuth.config.mock_auth[:facebook] = nil
 
         OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
             {"provider"=>"facebook",
@@ -33,9 +33,9 @@ describe "User logs in through facebook" do
         last_name = "Moidustein"
 
         visit "/"
-        click_on "Register"
+        click_on "Sign Up"
         expect(current_path).to eq("/users/new")
-        click_on "Connect through Facebook"
+        find('#facebook_sign_in').click
 
         expect(current_path).to eq("/profile")
         expect(page).to have_content("You are now logged in as Sharon")
@@ -50,8 +50,7 @@ describe "User logs in through facebook" do
         visit "/"
         click_on "Login"
         expect(current_path).to eq("/login")
-        click_on "Connect through Facebook"
-
+        find('#facebook_sign_in').click
         expect(current_path).to eq("/profile")
         expect(page).to have_content("You are now logged in as Sharon")
     end
