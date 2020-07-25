@@ -43,10 +43,4 @@ RSpec.describe 'Site Navigation' do
       expect(page).to have_content("Register")
     end
   end
-
-  describe 'As a logged in user' do
-    xit 'I see a button to logout' do
-      # leaving this here to fill in once we have the ability to log in a user!
-    end
-  end
 end

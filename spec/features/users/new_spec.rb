@@ -8,7 +8,7 @@ describe "User registration form" do
     email = "email@email.com"
     password = "password"
     visit "/"
-    click_on "Register"
+    click_on "Sign Up"
     expect(current_path).to eq("/users/new")
 
 
@@ -19,11 +19,11 @@ describe "User registration form" do
     fill_in :password, with: password
     fill_in :password_verification, with: password
 
-    click_on "Create User"
+    find('#submit').click
 
     expect(current_path).to eq("/profile")
 
-    expect(page).to have_content("Hello #{first_name} #{last_name}, thank you for creating an account")
+    expect(page).to have_content("Hello #{first_name}, thank you for creating an account")
   end
 
   it "The users email must be unique" do
@@ -40,7 +40,7 @@ describe "User registration form" do
       password = "password"
 
       visit "/"
-      click_on "Register"
+      click_on "Sign Up"
       expect(current_path).to eq("/users/new")
 
 
@@ -51,7 +51,7 @@ describe "User registration form" do
       fill_in :password, with: password
       fill_in :password_verification, with: password
 
-      click_on "Create User"
+      find('#submit').click
 
       expect(current_path).to eq("/users/new")
       expect(page).to have_content("Email has already been taken")
@@ -64,10 +64,8 @@ describe "User registration form" do
     password = "password"
 
     visit "/"
-    click_on "Register"
+    click_on "Sign Up"
     expect(current_path).to eq("/users/new")
-
-
 
     fill_in :last_name, with: last_name
 
@@ -75,7 +73,7 @@ describe "User registration form" do
     fill_in :password, with: password
     fill_in :password_verification, with: password
 
-    click_on "Create User"
+    find('#submit').click
 
     expect(current_path).to eq("/users/new")
     expect(page).to have_content("First name can't be blank")
