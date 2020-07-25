@@ -17,7 +17,6 @@ describe "User registration form" do
 
     fill_in :email, with: email
     fill_in :password, with: password
-    fill_in :password_verification, with: password
 
     find('#submit').click
 
@@ -49,7 +48,6 @@ describe "User registration form" do
 
       fill_in :email, with: email
       fill_in :password, with: password
-      fill_in :password_verification, with: password
 
       find('#submit').click
 
@@ -71,13 +69,10 @@ describe "User registration form" do
 
     fill_in :email, with: email
     fill_in :password, with: password
-    fill_in :password_verification, with: password
 
     find('#submit').click
 
     expect(current_path).to eq("/users/new")
     expect(page).to have_content("First name can't be blank")
   end
-
-
 end
