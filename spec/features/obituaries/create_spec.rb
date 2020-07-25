@@ -59,9 +59,10 @@ describe "As a registered user" do
     within '#age-select' do
       page.select(100)
     end
-    within '#covid' do
-      find("input[type='checkbox'][value='covid']").set(true)
+    within '#covid-select' do
+      page.check(:covid, option: true)
     end
+
     fill_in 'obituary[city]', with: 'Denver'
     within '#state-select' do
       page.select('CO')
