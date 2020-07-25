@@ -6,9 +6,9 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <% if current_user %>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="/obituaries/new">Add Obituary</a>
-              </li> -->
+              <li class="nav-item">
+                <button class="btn btn-lg btn-outline-secondary"><a href="/obituaries/new">Add Obituary</a></button>
+              </li>
               <li class="nav-item">
                 <button class="btn btn-lg btn-outline-secondary" type="button"><%= link_to "Logout", "/logout", method: :delete %></button>
               </li>
