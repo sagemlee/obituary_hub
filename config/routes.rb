@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
     get "/", to: "welcome#index"
     get "/login", to: "sessions#new"
-    post "/login", to: "sessions#create"
+    post "/login", to: "sessions#create" 
+    get "/auth/facebook/callback", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     get '/profile', to: "users#show"
    resources :users, only: [:new, :create]
@@ -16,4 +17,5 @@ Rails.application.routes.draw do
    namespace :search do
      get 'advanced', to: 'advanced#index'
    end
+
 end
