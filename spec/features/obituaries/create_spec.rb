@@ -37,10 +37,10 @@ describe "As a registered user" do
     expect(page).to have_content(obituary.age)
     expect(page).to have_content(obituary.city)
     expect(page).to have_content(obituary.state)
-    expect(page).to have_css('.obituary-image')
+    expect(page).to have_css('#obituary-image')
   end
 
-  it "I can create a new obituary for covid"do
+  it "I can create a new obituary for covid" do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
@@ -60,7 +60,7 @@ describe "As a registered user" do
       page.select(100)
     end
     within '#covid-select' do
-      page.check(:covid, option: true)
+      page.check("COVID-19")
     end
 
     fill_in 'obituary[city]', with: 'Denver'
