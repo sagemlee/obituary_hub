@@ -5,7 +5,7 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Sign In</h5>
-              <%= form_tag '/login', method: :post, :class => "form-signin" %>
+              <%= form_tag '/login', method: :post, :class => "form-signin" do %>
               <div class="form-label-group">
                 <%= label_tag :email %>
                 <%= text_field_tag :email %>
@@ -16,6 +16,7 @@
               </div>
               <button class="btn btn-lg btn-dark btn-primary btn-block text-uppercase" type="submit" id="submit">Sign in</button>
               <hr class="my-4">
+              <% end %>
               <!-- <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button> -->
               <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit" id="facebook_sign_in"><i class="fab fa-facebook-f mr-2"></i><a href= "/auth/facebook" class="text-white">Sign in with Facebook</a></button>
           </div>
