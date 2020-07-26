@@ -26,6 +26,7 @@ describe "User logs in through facebook" do
             }})
         end
 
+
     it "logs in through registration page" do
         OmniAuth.config.test_mode = true
 
@@ -39,6 +40,15 @@ describe "User logs in through facebook" do
 
         expect(current_path).to eq("/profile")
         expect(page).to have_content("You are now logged in as Sharon")
+
+        within("#logout") do
+            click_on "logout"
+        end 
+
+        expect(current_path).to eq("/")
+    expect(page).to have_content("You are now logged out")
+    expect(page).to have_content("Login")
+    expect(page).not_to have_content("Logout")
     end
 
     it "logs in through login page" do
@@ -53,5 +63,14 @@ describe "User logs in through facebook" do
         find('#facebook_sign_in').click
         expect(current_path).to eq("/profile")
         expect(page).to have_content("You are now logged in as Sharon")
+        within("#logout") do
+            click_on "logout"
+        end 
+
+        expect(current_path).to eq("/")
+    expect(page).to have_content("You are now logged out")
+    expect(page).to have_content("Login")
+    expect(page).not_to have_content("Logout")
+
     end
 end
