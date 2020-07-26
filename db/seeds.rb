@@ -20,7 +20,7 @@ user = User.create!({
     city: Faker::Address.city,
     state: Faker::Address.state_abbr,
     description: Faker::Lorem.paragraph(sentence_count: 15),
-    image_url: Faker::Fillmurray.unique.clear,
+    image_url: Faker::Fillmurray.image,
     user_id: user.id
   })
 
@@ -32,7 +32,7 @@ user = User.create!({
       city: Faker::Address.city,
       state: Faker::Address.state_abbr,
       description: Faker::Lorem.paragraph(sentence_count: 15),
-      image_url: Faker::Fillmurray.unique.clear,
+      image_url: Faker::Fillmurray.image,
       covid: true,
       user_id: user.id
     })

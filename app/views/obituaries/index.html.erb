@@ -13,8 +13,8 @@
     <tbody>
       <% @obituaries.each do |obituary| %>
         <tr id="obit-<%= obituary.id %>">
-          
-          <td><%= link_to image_tag(obituary.image_url), "/obituaries/#{obituary.id}" %>></td>
+
+          <td><%= link_to image_tag(obituary.image_url), "/obituaries/#{obituary.id}" %></td>
           <td><%= obituary.first_name %></td>
           <td><%= obituary.last_name %></td>
           <td><%= obituary.age %></td>
