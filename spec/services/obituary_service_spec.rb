@@ -8,7 +8,7 @@ describe "ObituaryService" do
     expect(obituaries).to be_a Array
     expect(obituaries.first).to be_a Hash
 
-    expect(obituaries.first).to have_key :headline
-    expect(obituaries.first).to have_key :abstract
+    expect(obituaries.first[:data][:type]).to eq('obituary')
+    expect(obituaries.first[:data][:attributes]).to have_key :abstract
   end
 end
