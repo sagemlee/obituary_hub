@@ -16,7 +16,7 @@ describe "Visitor Login Page" do
   fill_in :email, with: user.email
   fill_in :password, with: user.password
 
-  click_on "Submit"
+  find('#submit').click
 
   expect(current_path).to eq("/profile")
   expect(page).to have_content("You are now logged in as #{user.first_name}")
@@ -35,7 +35,7 @@ describe "Visitor Login Page" do
       fill_in :email, with: "Hello"
       fill_in :password, with: "password"
 
-      click_on "Submit"
+      find('#submit').click
 
       expect(current_path).to eq("/login")
       expect(page).to have_content("The credentials you have entered are invalid")
@@ -54,7 +54,7 @@ describe "Visitor Login Page" do
       fill_in :email, with: "jobbobby@bobby.com"
       fill_in :password, with: "hi"
 
-      click_on "Submit"
+      find('#submit').click
 
       expect(current_path).to eq("/login")
       expect(page).to have_content("The credentials you have entered are invalid")
@@ -72,8 +72,7 @@ describe "Visitor Login Page" do
 
       fill_in :email, with: "jobbobby@bobby.com"
 
-
-      click_on "Submit"
+      find('#submit').click
 
       expect(current_path).to eq("/login")
       expect(page).to have_content("The credentials you have entered are invalid")
@@ -87,23 +86,24 @@ describe "Visitor Login Page" do
       password: "password",
       })
 
-  visit '/'
-  expect(page).not_to have_content("Logout")
-  click_on "Login"
-  expect(current_path).to eq("/login")
+    visit '/'
+    expect(page).not_to have_content("Logout")
+    click_on "Login"
+    expect(current_path).to eq("/login")
 
-  fill_in :email, with: user.email
-  fill_in :password, with: user.password
+    fill_in :email, with: user.email
+    fill_in :password, with: user.password
 
-  click_on "Submit"
+    find('#submit').click
 
-  click_on "Logout"
+    within('#logout') do
+      click_link "Logout"
+    end
 
-  expect(current_path).to eq("/")
-  expect(page).to have_content("You have logged out")
-  expect(page).to have_content("Login")
-  expect(page).not_to have_content("Logout")
+    expect(current_path).to eq("/")
+    expect(page).to have_content("You are now logged out")
+    expect(page).to have_content("Login")
+    expect(page).not_to have_content("Logout")
   end
-
 
 end

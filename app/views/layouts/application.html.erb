@@ -3,58 +3,28 @@
   <head>
     <title>ObituaryHub</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
-  <nav1 class="navbar navbar-expand-lg navbar-light style="background-color: #e3f2fd;">
-
-     <h1><a class="navbar-brand" href="/">Obituary Hub</a></h1>
-    <nav2 class="navbar-right navbar-light bg-light">
-      <form class="form-inline">
-        <% if current_user %>
-          <%= link_to "Logout", "/logout", method: :delete, class: "btn btn-sm btn-outline-secondary" %>
-            <a href="/obituaries/new"><button class="btn btn-sm btn-outline-secondary" type="button">Add Obituary</button></a>
-        <% else %>
-          <a href="/login"<button class="btn btn-sm btn-outline-secondary" type="button">Login</button></a>
-          <a href="/users/new"<button class="btn btn-sm btn-outline-secondary" type="button">Register</button></a>
-        <% end %>
-      </form>
-    </nav2>
-  </nav1>
-
-  <nav3 class="navbar navbar-expand-lg navbar-light bg-light style="background-color: #e3f2fd;">
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-         <a class="nav-link" href="/obituaries">All Obituaries <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/obituaries/covid-19">COVID-19 Obituaries</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="/obituaries/recent">Recently Published</a>
-        </li>
-      </ul>
-        <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search by Name" aria-label="Search">
-          <button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <form class="form-inline">
-          <a class="nav-link" href="/search/advanced">Advanced Search Options</a>
-        </form>
-    </div>
-  </nav3>
-<% flash.each do |name, msg| %>
-<%= msg %>
-<% end %>
+  <body id="page-top">
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <% flash.each do |name, msg| %>
+    <%= msg %>
+    <% end %>
     <%= yield %>
   </body>
+  <footer>
+    <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © Obituary Hub 2020</div></footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS--
+    <script src="js/scripts.js"></script>
+  </footer>
 </html>

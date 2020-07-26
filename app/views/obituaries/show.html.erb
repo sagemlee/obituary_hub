@@ -1,17 +1,36 @@
-<div class="obituary-image">
-  <%= image_tag(@obituary.image_url) rescue image_tag 'https://image.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg' %>
+<!-- Page Content -->
+<div class="container", style= "background-color:white;">
+
+  <!-- Portfolio Item Heading -->
+  <h1 class="my-4"><%="#{@obituary.first_name} #{@obituary.last_name}"%></h1>
+
+  <!-- Portfolio Item Row -->
+  <div class="row">
+
+    <div class="col-md-4" id="obituary-image">
+      <%= image_tag(@obituary.image_url) rescue image_tag 'https://image.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg', {class: "img-fluid"} %>
+    </div>
+
+    <div class="col-md-6">
+      <h3 class="my-3">Obituary</h3>
+      <p><%= @obituary.description %></p>
+      <h3 class="my-3">Details</h3>
+      <ul>
+        <li>Age: <%= @obituary.age %></li>
+        <li>City: <%= @obituary.city %></li>
+        <li>State: <%= @obituary.state %></li>
+        <li>Covid: <%= @obituary.covid %></li>
+      </ul>
+      <br>
+    </div>
+
+  </div>
 </div>
-<div class="obituary-show">
-  <h1><%="#{@obituary.first_name} #{@obituary.last_name}"%></h1>
+<!-- /.container -->
 
-  <h2> Age: <%= @obituary.age %> </h2>
-  <h2> City: <%= @obituary.city %> </h2>
-  <h2> State: <%= @obituary.state %> </h2>
+<% if current_user && current_user.has_obituary?(@obituary) %>
+  <p><%= link_to 'Edit', edit_obituary_path(@obituary.id) %></p>
+  <p><%= link_to 'Delete', "/obituaries/#{@obituary.id}", method: :delete %></p>
+<% end %>
 
-  <p><%= @obituary.description %></p>
-
-  <% if current_user && current_user.has_obituary?(@obituary) %>
-    <p><%= link_to 'Edit', edit_obituary_path(@obituary.id) %></p>
-    <p><%= link_to 'Delete', "/obituaries/#{@obituary.id}", method: :delete %></p>
-  <% end %>
-</div>
+<%# What we display here will be dictated by whether it comes from NYT or is created by a user. User created content will have more information, and link will be optional. NYT will likely have publication date, source, link, and name (not separated into first and last) %>
