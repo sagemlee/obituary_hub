@@ -13,10 +13,12 @@ describe "As a visitor" do
     click_on "Community Obituaries"
 
     expect(current_path).to eq('/obituaries/community')
-
+    
     expect(page).to have_content(obituary.first_name)
     expect(page).to have_content(obituary.description)
-    expect(page).to_not have_content(obituary2.first_name)
-    expect(page).to_not have_content(obituary2.description)
+    expect(page).to have_content(obituary2.first_name)
+    expect(page).to have_content(obituary2.description)
+    expect(page).to have_content(obituary3.first_name)
+    expect(page).to have_content(obituary3.description)
   end
 end
