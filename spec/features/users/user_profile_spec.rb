@@ -2,14 +2,11 @@ require "rails_helper"
 
 describe "User Profile Page" do
   it "Displays user's obituaries and account information" do
-    user = User.create({
-      first_name: "Bob",
-      last_name: "Bobby",
-      email: "bobbobby@bobby.com",
-      password: "password",
-      })
-      obit = Obituary.create({user_id: user.id})
-      obit2 = Obituary.create
+    user = create(:user)
+    obit1 = create(:obituary, user_id: user.id)
+    obit2 = create(:obituary, user_id: user.id)
+    obit4 = create(:obituary, user_id: user.id)
+    obit4 = create(:obituary)
 
     visit '/'
     click_on "Login"
@@ -17,7 +14,7 @@ describe "User Profile Page" do
 
     fill_in :email, with: user.email
     fill_in :password, with: user.password
-
+      
     find('#submit').click
 
     expect(current_path).to eq("/profile")
@@ -28,7 +25,9 @@ describe "User Profile Page" do
 
     within(".my_obituaries") do 
         expect(page).to have_link("/obituaries/#{obit.id}")
-        expect(page).to_not have_link("/obituaries/#{obit2.id}")
+        expect(page).to have_link("/obituaries/#{obit2.id}")
+        expect(page).to have_link("/obituaries/#{obit3.id}")
+        expect(page).to_not have_link("/obituaries/#{obit4.id}")
     end 
   end 
 end 
