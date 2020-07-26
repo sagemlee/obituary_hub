@@ -1,4 +1,5 @@
 class Obituaries::CovidController < ApplicationController
   def index
-  end 
+    @obituaries = Obituary.where(covid: true) 
+  end
 end

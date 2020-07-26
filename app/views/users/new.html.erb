@@ -1,20 +1,33 @@
-<h2>Create a New User</h2>
-
-<%= form_tag "/users", method: "create" do %>
-
-<%= label_tag :first_name %>
-<%= text_field_tag :first_name %>
-
-<%= label_tag :last_name %>
-<%= text_field_tag :last_name %>
-
-<%= label_tag :email %>
-<%= text_field_tag :email %>
-
-<%= label_tag :password %>
-<%= password_field_tag :password %>
-
-<%= submit_tag "Create User" %>
-<% end %>
-
-<%= link_to "Connect through Facebook", "/auth/facebook"%>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign Up</h5>
+            <%= form_tag "/users", method: "create", :class => "form-signin" %>
+              <div class="form-label-group">
+                <%= label_tag :first_name %>
+                <%= text_field_tag :first_name %>
+              </div>
+              <div class="form-label-group">
+                <%= label_tag :last_name %>
+                <%= text_field_tag :last_name %>
+              </div>
+              <div class="form-label-group">
+                <%= label_tag :email %>
+                <%= text_field_tag :email %>
+              </div>
+              <div class="form-label-group">
+                <%= label_tag :password %>
+                <%= password_field_tag :password %>
+              </div>
+              <button class="btn btn-lg btn-dark btn-primary btn-block text-uppercase" type="submit" id="submit">Sign Up</button>
+              <hr class="my-4">
+              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit" href= "/auth/facebook" id="facebook_sign_in"><i class="fab fa-facebook-f mr-2"></i><a href= "/auth/facebook" class="text-white">Sign in with Facebook</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

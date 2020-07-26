@@ -1,51 +1,58 @@
 <div class="container">
+  <div class="col-sm-9 col-md-7 col-lg-8 mx-auto">
+    <br><h1 class="card-title text-center"><%= action %> Obituary</h1><br>
 
-  <h1><%= action %> Obituary</h1>
+      <%= form_for @obituary, class: 'submit-form' do |f| %>
+        <div class="card-body" style= "background-color:white;">
+          <div class="form-group row">
+            <div class="col">
+                <%= f.label 'First Name (required)', class: 'col-form-label-lg'%>
+                <%= f.text_field :first_name,  class: "form-control", placeholder: "First name", :required => true%>
+            </div>
+          </div>
 
-  <%= form_for @obituary, class: 'submit-form' do |f| %>
+          <div class="form-group row">
+            <div class="col">
+                <%= f.label 'Last Name (required)', class: 'col-form-label-lg' %>
+                <%= f.text_field :last_name, class: "form-control", placeholder: "Last name", :required => true %>
+            </div>
+          </div>
 
-    <div class="form-group row">
-      <div class="col">
-          <%= f.label 'First Name (required)', class: 'col-form-label-lg'%>
-          <%= f.text_field :first_name,  class: "form-control", placeholder: "First name", :required => true%>
-      </div>
-    </div>
+          <div class="form-group row">
+            <div class="col">
+            <%= f.label 'Image', class: 'col-form-label-lg' %>
+            <%= f.text_field :image_url, class: "form-control", placeholder: "Image Url" %>
+            </div>
+          </div>
 
-    <div class="form-group row">
-      <div class="col">
-          <%= f.label 'Last Name (required)', class: 'col-form-label-lg' %>
-          <%= f.text_field :last_name, class: "form-control", placeholder: "Last name", :required => true %>
-      </div>
-    </div>
+          <div class="form-group row">
+            <div class="col-md-8 mb-3">
+              <%= f.label :city, class: 'col-form-label-lg' %>
+              <%= f.text_field :city, class: "form-control", placeholder: 'City' %>
+            </div>
+            <div class="col-md-4 mb-3" id="state-select">
+              <%= f.label :state, class: 'col-form-label-lg' %>
+              <%= f.select :state, options_for_select(us_states), { }, {class: 'custom-select' } %>
+            </div>
+          </div>
 
-    <div class="form-group row">
-      <div class="col">
-      <%= f.label 'Image', class: 'col-form-label-lg' %>
-      <%= f.text_field :image_url, class: "form-control", placeholder: "Image Url" %>
-      </div>
-    </div>
+          <div class="form-group">
+            <%= f.label :description, class: 'col-form-label-lg'%>
+            <%= f.text_field :description, :size => 150, class: "form-control" %>
+          </div>
 
-    <div class="form-group row">
-      <div class="col-md-8 mb-3">
-        <%= f.label :city, class: 'col-form-label-lg' %>
-        <%= f.text_field :city, class: "form-control", placeholder: 'City' %>
-      </div>
-      <div class="col-md-4 mb-3" id="state-select">
-        <%= f.label :state, class: 'col-form-label-lg' %>
-        <%= f.select :state, options_for_select(us_states), { }, {class: 'custom-select' } %>
-      </div>
-    </div>
+          <div class="form-group" id="age-select">
+            <%= f.label :age, class: 'col-form-label-lg'%>
+            <%= f.select :age, options_for_select((0..150), 100), { }, {class: 'custom-select' } %>
+          </div>
 
-    <div class="form-group">
-      <%= f.label :description, class: 'col-form-label-lg'%>
-      <%= f.text_field :description, class: "form-control" %>
-    </div>
+          <div class="form-check" id="covid-select">
+            <%= f.label :covid, "COVID-19", class: 'col-form-label-lg' %>
+            <%= f.check_box :covid  %>
+          </div>
 
-    <div class="form-group" id="age-select">
-      <%= f.label :age %>
-      <%= f.select :age, options_for_select((0..150), 100), { }, {class: 'custom-select' } %>
-    </div>
-
-    <%= f.submit class: "btn btn-primary"%>
-  <% end %>
+        </div>
+      <%= f.submit class: "btn btn-lg btn-primary btn-block text-uppercase"%>
+    <% end %>
+  </div>
 </div>

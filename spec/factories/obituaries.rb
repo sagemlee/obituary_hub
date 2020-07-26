@@ -1,11 +1,11 @@
 FactoryBot.define do
   factory :obituary do
-    first_name { "MyString" }
-    last_name { "MyString" }
-    age { 1 }
-    city { "MyString" }
-    state { "MyString" }
-    description { "MyString" }
-    user
+    association :user
+    first_name {Faker::Name.first_name}
+    last_name {Faker::Name.last_name}
+    age { Faker::Number.within(range: 45..110)}
+    city { Faker::Address.city}
+    state { Faker::Address.state_abbr }
+    description { Faker::Lorem.paragraph(sentence_count: 10) }
   end
 end
