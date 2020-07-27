@@ -31,7 +31,7 @@ class ObituariesController < ApplicationController
   def update
     @obituary = Obituary.find(params[:id])
     if @obituary.update(obituary_params)
-      flash[:success] = 'Obituary Updated!'
+      flash[:success] = 'Obituary was successfully updated.'
       redirect_to obituary_path(@obituary.id)
     else
       flash[:error] = @obituary.errors.full_messages.to_sentence
@@ -41,7 +41,7 @@ class ObituariesController < ApplicationController
 
   def destroy
     Obituary.find(params[:id]).destroy
-    flash[:notice] = 'Obituary Deleted'
+    flash[:notice] = 'Obituary was successfully deleted.'
     redirect_to '/profile'
   end
 
