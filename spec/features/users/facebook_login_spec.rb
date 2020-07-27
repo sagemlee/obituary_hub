@@ -26,8 +26,7 @@ describe "User logs in through facebook" do
             }})
         end
 
-
-    it "logs in through registration page" do
+  xit "logs in through registration page" do
         OmniAuth.config.test_mode = true
 
         first_name = "Sharon"
@@ -51,7 +50,7 @@ describe "User logs in through facebook" do
         expect(page).not_to have_content("Logout")
     end
 
-    it "logs in through login page" do
+    xit "logs in through login page" do
         OmniAuth.config.test_mode = true
 
         first_name = "Sharon"
