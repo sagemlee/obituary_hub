@@ -4,9 +4,8 @@ class UsersController < ApplicationController
   end
 
   def create
-
     new_user = User.new(user_params)
-
+    
     if new_user.save
       flash[:success] = "Hello #{new_user.first_name}, thank you for creating an account!"
       session[:user_id] = new_user.id
@@ -19,7 +18,7 @@ class UsersController < ApplicationController
 
 
   def show
-
+    @user = current_user
   end
 
   private
