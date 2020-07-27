@@ -119,6 +119,11 @@ body {
   padding: 0.5rem;
 }
 
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #edeeea; // Choose your own color here
+ }
+
 
 .form-label-group input {
   height: auto;
