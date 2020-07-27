@@ -10,7 +10,10 @@ class ObituaryService
   end
 
   def get_obituaries_by_name(name)
-    resp = conn.get('/name')
+    resp = conn.get('/name') do |req|
+      req.params['name'] = "#{name}"
+    end
+    JSON.parse(resp.body, symbolize_names: true)
   end
 
 
