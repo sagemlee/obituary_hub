@@ -9,7 +9,7 @@ describe "User logs in through facebook" do
         click_link('Sign Up with Google')
 
         expect(current_path).to eq("/profile")
-        expect(page).to have_content("You are now logged in as Sharon")
+        expect(page).to have_content("You are now logged in as John")
 
         within("#logout") do
             click_link "Logout"
@@ -29,7 +29,7 @@ describe "User logs in through facebook" do
         click_link('Sign in with Google')
 
         expect(current_path).to eq("/profile")
-        expect(page).to have_content("You are now logged in as Sharon")
+        expect(page).to have_content("You are now logged in as John")
         within("#logout") do
             click_link "Logout"
         end
@@ -48,6 +48,6 @@ describe "User logs in through facebook" do
       click_link 'Logout'
       click_on 'Login'
       click_link('Sign in with Google')
-      expect(page).to have_content("You are now logged in as Sharon")
+      expect(page).to have_content("You are now logged in as John")
     end
 end
