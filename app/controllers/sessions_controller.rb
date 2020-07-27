@@ -4,22 +4,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if request.env['omniauth.auth']
-      user = User.create_with_omniauth(request.env['omniauth.auth'])
-      user.save!
+    user = User.find_by(email: params[:email])
+    if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:notice] = "You are now logged in as #{user.first_name}"
       redirect_to "/profile"
     else
-      user = User.find_by(email: params[:email])
-      if user && user.authenticate(params[:password])
-        session[:user_id] = user.id
-        flash[:notice] = "You are now logged in as #{user.first_name}"
-        redirect_to "/profile"
-      else
-        flash[:notice] = "The credentials you have entered are invalid"
-        redirect_to "/login"
-      end
+      flash[:notice] = "The credentials you have entered are invalid"
+      redirect_to "/login"
     end
   end
 
