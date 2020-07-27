@@ -40,9 +40,9 @@
         <a class="nav-link" href="/obituaries/recent">Recently Published</a>
       </li>
     </ul>
-    <form class="form-inline">
+    <form class="form-inline" id="search_form" action='/search' method="get">
       <a class="nav-link" href="/search/advanced">Advanced Search Options</a>
-      <input class="form-control mr-sm-2" type="search" placeholder="Search by Name" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search by Name" aria-label="Search" name="name">
       <button class="btn btn-sm btn-outline-primary my-2 my-sm-0 text-dark" type="submit">Search</button>
     </form>
 </div>

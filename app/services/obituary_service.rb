@@ -9,6 +9,10 @@ class ObituaryService
     JSON.parse(resp.body, symbolize_names: true)
   end
 
+  def get_obituaries_by_name(name)
+    resp = conn.get('/name')
+  end
+
 
 
   private
