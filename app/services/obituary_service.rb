@@ -9,6 +9,8 @@ class ObituaryService
     JSON.parse(resp.body, symbolize_names: true)
   end
 
+
+
   private
 
   def conn

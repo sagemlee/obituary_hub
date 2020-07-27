@@ -13,4 +13,24 @@
   </div>
   <hr>
 <% end %>
+
+  <% @obituaries_api.each do |obit| %>
+    <section class="covid_obituary">
+      <div class="headline">
+        <%= obit.headline %>
+      </div>
+      <div class="abstract">
+        <%= obit.abstract %>
+      </div>
+      <div class="web_url">
+        <%= obit.web_url %>
+      </div>
+      <div class="pub_date">
+        <%= obit.pub_date %>
+      </div>
+      <div class="word_count">
+        <%= obit.word_count %>
+      </div>
+    </section>
+  <% end %>
 </div>
