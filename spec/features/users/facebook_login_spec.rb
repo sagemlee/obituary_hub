@@ -12,8 +12,8 @@ describe "User logs in through facebook" do
         expect(page).to have_content("You are now logged in as Sharon")
 
         within("#logout") do
-            click_on "logout"
-        end 
+            click_link "Logout"
+        end
 
         expect(current_path).to eq("/")
         expect(page).to have_content("You are now logged out")
@@ -31,8 +31,8 @@ describe "User logs in through facebook" do
         expect(current_path).to eq("/profile")
         expect(page).to have_content("You are now logged in as Sharon")
         within("#logout") do
-            click_on "logout"
-        end 
+            click_link "Logout"
+        end
 
         expect(current_path).to eq("/")
         expect(page).to have_content("You are now logged out")
