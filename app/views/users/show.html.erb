@@ -29,13 +29,15 @@
         <div class="card border-secondary mb-3" >
             <div class="card-header text-center"><h5>My Submissions</h5></div>
             <div class="card-body" style= "background-color:white;">
-            <% @user.obituaries.each do |obit| %>
-                <div class="form-group row">
+                <% @user.obituaries.each do |obit| %>
+                    <div class="form-group row text-center">
                     <div class="col">
-                        <a href="/obituaries/#{obit.id}" class="card-link"><%=obit.first_name obit_last_name%></a>
-                    </div>
-                </div>
-               <%end%>
+                    <section id=obit-<%=obit.id%> >
+                                <a href="/obituaries/<%=obit.id%>" class="card-link"><%=obit.first_name%> <%=obit.last_name%>         "<%=obit.description.first(60)%> ..." </a>
+                                </section>
+                            </div>
+                        </div>
+                <%end%>
             </div>
         </div>
     </div>

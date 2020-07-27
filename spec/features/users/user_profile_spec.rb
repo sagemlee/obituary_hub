@@ -5,7 +5,7 @@ describe "User Profile Page" do
     user = create(:user)
     obit1 = create(:obituary, user_id: user.id)
     obit2 = create(:obituary, user_id: user.id)
-    obit4 = create(:obituary, user_id: user.id)
+    obit3 = create(:obituary, user_id: user.id)
     obit4 = create(:obituary)
 
     visit '/'
@@ -19,15 +19,19 @@ describe "User Profile Page" do
 
     expect(current_path).to eq("/profile")
     expect(page).to have_content("You are now logged in as #{user.first_name}")
-    expect(page).to have_content("First Name: Bob")
-    expect(page).to have_content("Last Name: Bobby")
-    expect(page).to have_content("Email:bobbobby@bobby.com")
+    expect(page).to have_content("First Name: #{user.first_name}")
+    expect(page).to have_content("Last Name: #{user.last_name}")
+    expect(page).to have_content("Email: #{user.email}")
 
-    within(".my_obituaries") do 
-        expect(page).to have_link("/obituaries/#{obit.id}")
-        expect(page).to have_link("/obituaries/#{obit2.id}")
-        expect(page).to have_link("/obituaries/#{obit3.id}")
-        expect(page).to_not have_link("/obituaries/#{obit4.id}")
-    end 
+    expect(page).to have_css("#obit-#{obit1.id}")
+    expect(page).to have_css("#obit-#{obit2.id}")
+    expect(page).to have_css("#obit-#{obit3.id}")
+    expect(page).to_not have_css("#obit-#{obit4.id}")
+
+    within("#obit-#{obit1.id}") do 
+      find(".card-link").click
+    end
+    expect(current_path).to eq("/obituaries/#{obit1.id}")
+
   end 
 end 
