@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col-sm-9 col-md-7 col-lg-8 mx-auto">
-    <br><h1 class="card-title text-center"><%= action %> Obituary</h1><br>
-
+    <br><h1 class="card-title text-center"><%= action %> Obituary</h1>
+      <div class="car card-signin my-5">
       <%= form_for @obituary, class: 'submit-form' do |f| %>
         <div class="card-body" style= "background-color:white;">
           <div class="form-group row">
@@ -20,7 +20,7 @@
 
           <div class="form-group row">
             <div class="col">
-            <%= f.label 'Image', class: 'col-form-label-lg' %>
+            <%= f.label :label, "Image URL", class: 'col-form-label-lg' %>
             <%= f.text_field :image_url, class: "form-control", placeholder: "Image Url" %>
             </div>
           </div>
@@ -36,9 +36,11 @@
             </div>
           </div>
 
-          <div class="form-group">
+          <div class="form-label-group row">
+            <div class="col">
             <%= f.label :description, class: 'col-form-label-lg'%>
-            <%= f.text_field :description, :size => 150, class: "form-control" %>
+            <%= f.text_area :description, cols: 5, rows: 10, class: "form-control" %>
+            </div>
           </div>
 
           <div class="form-group" id="age-select">
@@ -46,13 +48,13 @@
             <%= f.select :age, options_for_select((0..150), 100), { }, {class: 'custom-select' } %>
           </div>
 
-          <div class="form-check" id="covid-select">
-            <%= f.label :covid, "COVID-19", class: 'col-form-label-lg' %>
-            <%= f.check_box :covid  %>
+          <div class="form-check row" id="covid-select">
+            <%= f.check_box :covid, class: 'big-checkbox' %>
+            <%= f.label :covid, "This person died from COVID-19", class: 'col-form-label-lg p-3' %>
           </div>
-
-        </div>
-      <%= f.submit class: "btn btn-lg btn-primary btn-block text-uppercase"%>
-    <% end %>
+          <br>
+          <%= f.submit class: "btn btn-submit btn-lg btn-dark btn-block text-uppercase"%>
+        <% end %>
+      </div>
   </div>
 </div>
