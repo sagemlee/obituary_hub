@@ -16,6 +16,11 @@ describe "User Profile Page" do
     fill_in :password, with: user.password
       
     find('#submit').click
+    within '#mainNav' do
+      find('#homepage').click
+    end
+    
+    click "My Profile"
 
     expect(current_path).to eq("/profile")
     expect(page).to have_content("You are now logged in as #{user.first_name}")
