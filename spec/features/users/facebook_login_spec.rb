@@ -18,8 +18,18 @@ describe "User logs in through facebook" do
         expect(current_path).to eq("/login")
 
         click_link('Sign in with Facebook')
-        
+
         expect(current_path).to eq("/profile")
         expect(page).to have_content("You are now logged in as Sharon")
+    end
+
+    it "logs in when user already has an account" do
+      visit "/"
+      click_on "Sign Up"
+      click_link('Sign in with Facebook')
+      click_link 'Logout'
+      click_on 'Login'
+      click_link('Sign in with Facebook')
+      expect(page).to have_content("You are now logged in as Sharon")
     end
 end
