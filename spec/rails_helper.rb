@@ -73,3 +73,26 @@ RSpec.configure do |config|
   end
 end
 end
+
+OmniAuth.config.test_mode = true
+
+OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
+    {"provider"=>"facebook",
+    "uid"=>"100626065081257",
+    "info"=>
+    {"email"=>"sharon_vzvvxsf_moidustein@tfbnw.net",
+    "first_name"=>"Sharon",
+    "last_name"=>"Moidustein",
+    "image"=>"http://graph.facebook.com/v3.0/100626065081257/picture"},
+    "credentials"=>
+    {"token"=>
+        "EAAqHzoceqSsBAN90pOElp2umzOEvZBNkOqtMzTL13oZBQMLpaZAH1QfXYanI9hLEmOsYvDhJOpYzEZCObeSagX8DOfiHx24yysYPfuiCjNccgCzZBnZApziZC7kZCPDUTVpqsfmNMWACdlLJeUZCmBXJ3y2j54LrZBZBz5dGliPYmd6RtGo6bv52P7GZBtmY3VmTCrAZD",
+    "expires_at"=>1600736355,
+    "expires"=>true},
+    "extra"=>
+    {"raw_info"=>
+        {"id"=>"100626065081257",
+        "first_name"=>"Sharon",
+        "last_name"=>"Moidustein",
+        "email"=>"sharon_vzvvxsf_moidustein@tfbnw.net"}
+    }})
