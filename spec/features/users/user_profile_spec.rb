@@ -9,6 +9,9 @@ describe "User Profile Page" do
     obit4 = create(:obituary)
 
     visit '/'
+
+    expect(page).to_not have_css('#profile')
+
     click_on "Login"
     expect(current_path).to eq("/login")
 
