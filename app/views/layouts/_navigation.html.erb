@@ -9,6 +9,9 @@
               <li class="nav-item">
                 <button class="btn btn-outline-secondary mr-1"><a href="/obituaries/new">Add Obituary</a></button>
               </li>
+              <li class="nav-item">
+                <button class="btn btn-outline-secondary mr-1" ><a id="profile" href="/profile">Profile</a></button>
+              </li>
               <li class="nav-item" id="logout">
                 <button class="btn btn-outline-secondary" type="button"><%= link_to "Logout", "/logout", method: :delete %></button>
               </li>
@@ -38,6 +41,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/obituaries/recent">Recently Published</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/obituaries/community">Community Obituaries</a>
       </li>
     </ul>
     <form class="form-inline" id="search_form" action='/search' method="get">

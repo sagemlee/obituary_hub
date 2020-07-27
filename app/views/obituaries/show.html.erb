@@ -19,7 +19,9 @@
         <li>Age: <%= @obituary.age %></li>
         <li>City: <%= @obituary.city %></li>
         <li>State: <%= @obituary.state %></li>
-        <li>Covid: <%= @obituary.covid %></li>
+        <% if @obituary.covid == true %>
+          <li><%= "This person died from COVID-19." %></li>
+        <% end %>
       </ul>
       <br>
     </div>
