@@ -100,25 +100,31 @@ body {
   transition: all 0.2s;
 }
 
-.form-search .btn {
-  font-size: 80%;
-  border-radius: 5rem;
-  letter-spacing: .1rem;
-  font-weight: bold;
-  padding: 1rem;
-  transition: all 0.2s;
-}
-
 .form-label-group {
   position: relative;
   margin-bottom: 1rem;
   width: 100%;
 }
 
+.form-group-search {
+  position: relative;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: left;
+  border-radius: 2rem;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  line-height: 1.5;
+  padding: 0.5rem;
+}
+
+
 .form-label-group input {
   height: auto;
   border-radius: 2rem;
   width: 100%;
+
 }
 
 .form-label-group>input,

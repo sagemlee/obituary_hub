@@ -1,48 +1,52 @@
 <div class="container">
-  <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
-    <br><h1 class="card-title text-center">Advanced Search Options</h1><br>
-
+  <div class="col-sm-9 col-md-7 col-lg-8 mx-auto">
+    <br><h1 class="card-title text-center">Advanced Search Options</h1>
+    <div class="card card-search my-5">
       <%= form_tag "/search/advanced", method: :get, class: 'submit-form' %>
         <div class="card-body" style= "background-color:white; text-align:center;">
-          <p>Use this form to search a single field or multiple fields.</p><br>
-
-          <div class="form-group row">
-            <div class="col">
-                <%= label_tag 'Name:' %>
-                <%= text_field :name, nil, placeholder: "Search by Name" %>
+          <p class="card-title">Use this form to search a single field or multiple fields.</p>
+          <div class="form-group-search row">
+            <div class="col col-form-label-lg">
+                <%= label_tag 'Name'%>
+                <%= text_field :name, nil, placeholder: "Search by Name", class: "form-control" %>
             </div>
           </div>
 
-          <div class="form-group row">
-            <div class="col">
-              <%= label_tag 'City:' %>
-              <%= text_field_tag :city, nil, placeholder: 'Search by City' %>
+          <div class="form-group-search row">
+            <div class="col col-form-label-lg">
+              <%= label_tag 'City' %>
+              <%= text_field_tag :city, nil, placeholder: 'Search by City', class: "form-control" %>
             </div>
           </div>
 
-          <div class="form-group row">
-            <div class="col" >
+          <div class="form-group-search row">
+            <div class="col col-form-label-lg" >
               <%= label_tag :state %>
-              <%= select_tag :state, options_for_select(us_states), { } %>
+              <%= select_tag :state, options_for_select(us_states), {class: 'custom-select' }  %>
             </div>
           </div>
 
-          <div class="form-group" id="age-select">
-            <%= label_tag :age %>
-            <%= select_tag :age, options_for_select((0..150), 100), { }%>
+          <div class="form-group-search row" id="age-select">
+            <div class="col col-form-label-lg" >
+              <%= label_tag :age %>
+              <%= select_tag :age, options_for_select((0..150), 100), {class: 'custom-select' } %>
+            </div>
           </div>
 
-          <div class="form-group" id="year-select">
-            <%= label_tag :year %>
-            <%= select_tag :year, options_for_select((1981..2020), 2020), { } %>
+          <div class="form-group-search row" id="year-select">
+            <div class="col col-form-label-lg" >
+              <%= label_tag :year %>
+              <%= select_tag :year, options_for_select((1981..2020), 2020), {class: 'custom-select' } %>
+            </div>
           </div>
 
-          <div class="form-group" id="source-select">
-            <%= label_tag :source %>
-            <%= select_tag :source, options_for_select(["ObituaryHub Community", "The New York Times"]) %>
+          <div class="form-group-search row" id="source-select">
+            <div class="col col-form-label-lg" >
+              <%= label_tag :source %>
+              <%= select_tag :source, options_for_select(["ObituaryHub Community", "The New York Times"]), {class: 'custom-select' }  %>
+            </div>
           </div>
-
+          <button class="btn btn-submit btn-lg btn-dark btn-primary btn-block text-uppercase" type="submit" id="submit">Search</button>
         </div>
-      <button class="btn btn-lg btn-dark btn-primary btn-block text-uppercase" type="submit" id="submit">Search</button>
   </div>
 </div>
