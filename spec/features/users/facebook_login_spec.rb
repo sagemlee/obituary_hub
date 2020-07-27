@@ -50,4 +50,25 @@ describe "User logs in through facebook" do
       click_link('Sign in with Facebook')
       expect(page).to have_content("You are now logged in as Sharon")
     end
+
+    it "has a sad path if the facebook login fails" do
+      OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
+          {"provider"=>"facebook",
+          "uid"=>"100626065081257",
+          "info"=>
+          {"first_name"=>"Sharon",
+          "last_name"=>"Moidustein",
+          "image"=>"http://graph.facebook.com/v3.0/100626065081257/picture"},
+          "credentials"=>
+          {"token"=>
+              "EAAqHzoceqSsBAN90pOElp2umzOEvZBNkOqtMzTL13oZBQMLpaZAH1QfXYanI9hLEmOsYvDhJOpYzEZCObeSagX8DOfiHx24yysYPfuiCjNccgCzZBnZApziZC7kZCPDUTVpqsfmNMWACdlLJeUZCmBXJ3y2j54LrZBZBz5dGliPYmd6RtGo6bv52P7GZBtmY3VmTCrAZD",
+          "expires_at"=>1600736355,
+          "expires"=>true}
+          })
+      visit "/"
+      click_on "Sign Up"
+      click_link('Sign Up with Facebook')
+      expect(current_path).to eq("/users/new")
+      expect(page).to have_content("An Error has occured with")
+    end
 end
