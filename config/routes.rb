@@ -11,6 +11,7 @@ Rails.application.routes.draw do
    namespace :obituaries do
      get 'covid-19', to: 'covid#index'
      get 'recent', to: 'recent#index'
+     get 'community', to: 'community#index'
    end
    resources :obituaries
    get '/search', to: 'search#index'

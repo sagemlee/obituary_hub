@@ -1,0 +1,45 @@
+
+
+<br><h1 class="card-title text-center ">My Profile</h1><br>
+
+    <div class="col-sm-9 col-md-4 col-lg-7  mx-auto">
+        <div class="card border-secondary mb-3" >
+            <div class="card-header text-center"><h5>My Account Information</h5></div>
+            <div class="card-body" style= "background-color:white;">
+                <div class="form-group row">
+                    <div class="col">
+                        <p>First Name: <%=@user.first_name%></p>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <p>Last Name: <%=@user.last_name%></p>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <p>Email: <%=@user.email%></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-9 col-md-4 col-lg-7  mx-auto">
+        <div class="card border-secondary mb-3" >
+            <div class="card-header text-center"><h5>My Submissions</h5></div>
+            <div class="card-body" style= "background-color:white;">
+                <% @user.obituaries.each do |obit| %>
+                    <div class="form-group row text-center">
+                    <div class="col">
+                    <section id=obit-<%=obit.id%> >
+                                <a href="/obituaries/<%=obit.id%>" class="card-link"><%=obit.first_name%> <%=obit.last_name%>         "<%=obit.description.first(60)%> ..." </a>
+                                </section>
+                            </div>
+                        </div>
+                <%end%>
+            </div>
+        </div>
+    </div>
+
+</div>
