@@ -5,6 +5,6 @@ class Obituary < ApplicationRecord
 
   private
   def default_image
-    self.image_url ||= '/thumbnail_logo.png'
+    self.image_url ||= 'https://image.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg'
   end
 end
