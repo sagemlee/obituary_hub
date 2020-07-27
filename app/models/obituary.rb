@@ -7,8 +7,4 @@ class Obituary < ApplicationRecord
   def default_image
     self.image_url ||= '/thumbnail_logo.png'
   end
-
-  def covid_sentence
-    binding.pry
-  end
 end
