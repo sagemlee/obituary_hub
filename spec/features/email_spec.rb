@@ -18,7 +18,7 @@ RSpec.describe 'User can send emails' do
     click_on 'Share this Obituary in an Email'
     expect(current_path).to eq("/obituaries/#{obit.id}/share")
 
-    fill_in :email, with: "bob@bob.com"
+    fill_in :recipient_email, with: "bob@bob.com"
     click_on "Send Email"
 
     expect(current_path).to eq("obituaries/#{obit.id}")
