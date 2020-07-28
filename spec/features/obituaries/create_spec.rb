@@ -73,7 +73,7 @@ describe "As a registered user" do
 
     obituary = Obituary.last
     expect(current_path).to eq("/obituaries/#{obituary.id}")
-    expect(page).to have_content('Obituary Created')
+    expect(page).to have_content('New obituary was successfully created.')
     expect(page).to have_content("COVID-19")
 
   end
