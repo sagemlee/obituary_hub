@@ -12,9 +12,7 @@
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <% flash.each do |name, msg| %>
-    <%= msg %>
-    <% end %>
+    <%= render partial: 'flash', flash: flash %> 
     <%= yield %>
   </body>
   <br>
