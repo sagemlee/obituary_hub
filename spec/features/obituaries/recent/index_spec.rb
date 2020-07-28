@@ -29,6 +29,10 @@ describe "As a Visitor" do
       expect(page).to have_css(".word_count")
       word_count = find(".word_count").text
       expect(word_count).not_to be_empty
+
+      expect(page).to have_css(".image")
+      image = find(".image").text
+      expect(image).not_to be_empty
     end
   end
 end

@@ -11,7 +11,7 @@
         <a class="btn btn-dark" href= <%= "/obituaries/#{obit.id}" %>>View Obituary</a>
       </div>
     </div>
-
+    <hr>
   <% end %>
 
   <% @obituaries_api.each do |obit| %>
@@ -30,6 +30,9 @@
       </div>
       <div class="word_count">
         <%= obit.word_count %>
+      </div>
+      <div class="image">
+        <%= obit.image %>
       </div>
     </section>
   <% end %>
