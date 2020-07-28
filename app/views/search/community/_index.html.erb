@@ -1,0 +1,26 @@
+<h1 class="my-4">Search Results (Community)</h1>
+
+<table class="table table-sm table-bordered table-striped">
+  <thead class='thead-dark'>
+    <tr>
+      <th scope="col">Image</th>
+      <th scope="col">Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Location</th>
+      <th scope="col">Age</th>
+      <th scope="col">Source</th>
+    </tr>
+  </thead>
+  <tbody style= "background-color:white;">
+    <% @obituaries.each do |obit| %>
+      <tr id="obit-<%= obit.id %>">
+        <td><%= link_to image_tag(obit.image_url, size: "50x50"), "/obituaries/#{obit.id}" %></td>
+        <td class="align-middle pl-3"><%= obit.name %></td>
+        <td class="align-middle pl-3"><%= obit.date %></td>
+        <td class="align-middle pl-3"><%= obit.location %></td>
+        <td class="align-middle pl-3"><%= obit.age %></td>
+        <td class="align-middle pl-3"><%= "ObituaryHub Community" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

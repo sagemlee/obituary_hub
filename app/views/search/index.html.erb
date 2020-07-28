@@ -1,54 +1,12 @@
 <div class="container">
-  <h1 class="my-4">Search Results (Community)</h1>
-    <table class="table table-sm table-bordered table-striped">
-      <thead class='thead-dark'>
-        <tr>
-          <th scope="col">Image</th>
-          <th scope="col">Name</th>
-          <th scope="col">Date</th>
-          <th scope="col">Location</th>
-          <th scope="col">Age</th>
-          <th scope="col">Source</th>
-        </tr>
-      </thead>
-      <tbody style= "background-color:white;">
-        <% @obituaries.each do |obit| %>
-          <tr id="obit-<%= obit.id %>">
-            <td><%= link_to image_tag(obit.image_url, size: "50x50"), "/obituaries/#{obit.id}" %></td>
-            <td class="align-middle pl-3"><%= obit.name %></td>
-            <td class="align-middle pl-3"><%= obit.date %></td>
-            <td class="align-middle pl-3"><%= obit.location %></td>
-            <td class="align-middle pl-3"><%= obit.age %></td>
-            <td class="align-middle pl-3"><%= "ObituaryHub Community" %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <h1 class="my-4">Search Results for <%= @name %>:</h1>
 
-  <h1 class="my-4">Search Results (NYT)</h1>
-    <table class="table table-sm table-bordered table-striped">
-      <thead class='thead-dark'>
-        <tr>
-          <th scope="col">Image</th>
-          <th scope="col">Headline</th>
-          <th scope="col">Date</th>
-          <th scope="col">Lead Paragraph</th>
-          <th scope="col">Word Count</th>
-          <th scope="col">URL</th>
-        </tr>
-      </thead>
-      <tbody style= "background-color:white;">
-        <% @obituaries_api.each do |obit| %>
-          <tr id="obituary_by_name">
-            <td id="image"><% image_tag("") %></td>
-            <td id="headline" class="align-middle pl-3"><%= obit.headline %></td>
-            <td id="pub_date" class="align-middle pl-3"><%= obit.pub_date %></td>
-            <td id="abstract" class="align-middle pl-3"><%= obit.abstract %></td>
-            <td id="word_count" class="align-middle pl-3"><%= obit.word_count %></td>
-            <td id="web_url" class="align-middle pl-3"><%= link_to obit.web_url %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <div id="nytimes-results">
+    <%= link_to "Show Nytimes Results", "/search/nytimes?name=#{@name}", remote: true %>
+  </div>
+
+  <div id="community-results">
+    <%= link_to "Show Community Results", "/search/community?name=#{@name}", remote: true %>
+  </div>
 
 </div>
