@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'User can send emails' do
-  describe 'From obituary show page' do
+  it 'From obituary show page' do  
+
     user = create(:user)
     obit = create(:obituary)
 
