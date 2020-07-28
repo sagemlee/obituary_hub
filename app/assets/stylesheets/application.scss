@@ -23,6 +23,12 @@
   background-repeat: no-repeat;
 }
 
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
 .darktan_body {
   background: #e2e3dc;
 }
