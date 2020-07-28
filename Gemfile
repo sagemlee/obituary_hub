@@ -31,6 +31,8 @@ group :development, :test do
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'simplecov'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
 end
 
 group :development do
