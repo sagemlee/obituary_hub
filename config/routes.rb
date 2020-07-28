@@ -19,5 +19,6 @@ Rails.application.routes.draw do
    namespace :search do
      get 'advanced', to: 'advanced#index'
    end
+   get '/resources', to: 'resources#index'
 
 end

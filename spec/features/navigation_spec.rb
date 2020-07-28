@@ -24,6 +24,12 @@ RSpec.describe 'Site Navigation' do
       expect(current_path).to eq('/obituaries/recent')
 
       within '#secondaryNav' do
+        click_link 'Additional Resources'
+      end
+
+      expect(current_path).to eq('/resources')
+
+      within '#secondaryNav' do
         click_link 'Advanced Search'
       end
 
