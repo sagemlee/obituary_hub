@@ -33,6 +33,8 @@ group :development, :test do
   gem 'simplecov'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
 end
 
 group :development do
@@ -49,4 +51,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 gem 'figaro'
