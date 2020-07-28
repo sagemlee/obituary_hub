@@ -16,4 +16,4 @@ class Obituaries::EmailController < ApplicationController
 
         redirect_to "/obituaries/#{params[:obit_it]}"
     end 
-end
+end 
