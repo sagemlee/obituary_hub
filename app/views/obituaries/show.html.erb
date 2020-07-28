@@ -16,9 +16,9 @@
       <p><%= @obituary.description %></p>
       <h3 class="my-3">Details</h3>
       <ul class="no-bullets">
-        <li><b>Date Published: </b><%= @obituary.date %></li>
         <li><b>Age: </b><%= @obituary.age %></li>
         <li><b>Location: </b><%= @obituary.location %></li>
+        <li><b>Date Published: </b><%= @obituary.date %></li>
         <% if @obituary.covid == true %>
           <br><li><i><%= "This person died from COVID-19." %></i></li>
           <li><%= link_to "Read more obituaries of people who died from COVID-19.", obituaries_covid_19_path %></li>
