@@ -22,7 +22,7 @@ describe "As a registered user" do
     click_on "Update Obituary"
 
     expect(current_path).to eq("/obituaries/#{obituary.id}")
-    expect(page).to have_content('Obituary Updated')
+    expect(page).to have_content('Obituary was successfully updated.')
     expect(page).to have_content(first_name)
     expect(page).to have_content(last_name)
     expect(page).to have_content(description)
