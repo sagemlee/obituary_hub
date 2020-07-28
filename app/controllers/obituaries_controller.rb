@@ -1,7 +1,4 @@
 class ObituariesController < ApplicationController
-  def index
-    @obituaries = Obituary.all
-  end
 
   def new
     render_404 if !current_user

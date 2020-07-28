@@ -6,22 +6,16 @@ RSpec.describe 'Site Navigation' do
       visit '/'
 
       within '#secondaryNav' do
-        click_link 'All Obituaries'
+        click_link 'COVID-19 Obituaries'
       end
 
-      expect(current_path).to eq('/obituaries')
+      expect(current_path).to eq('/obituaries/covid-19')
 
       within '#mainNav' do
         find('#homepage').click
       end
 
       expect(current_path).to eq('/')
-
-      within '#secondaryNav' do
-        click_link 'COVID-19 Obituaries'
-      end
-
-      expect(current_path).to eq('/obituaries/covid-19')
 
       within '#secondaryNav' do
         click_link 'Recently Published'
