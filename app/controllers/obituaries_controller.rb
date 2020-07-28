@@ -1,7 +1,4 @@
 class ObituariesController < ApplicationController
-  def index
-    @obituaries = Obituary.all
-  end
 
   def new
     render_404 if !current_user
@@ -11,7 +8,7 @@ class ObituariesController < ApplicationController
   def create
     @obituary = current_user.obituaries.new(obituary_params)
     if @obituary.save
-      flash[:success] = 'Obituary Created'
+      flash[:success] = 'New obituary was successfully created.'
       redirect_to obituary_path(@obituary.id)
     else
       flash[:error] = @obituary.errors.full_messages.to_sentence
@@ -31,7 +28,7 @@ class ObituariesController < ApplicationController
   def update
     @obituary = Obituary.find(params[:id])
     if @obituary.update(obituary_params)
-      flash[:success] = 'Obituary Updated!'
+      flash[:success] = 'Obituary was successfully updated.'
       redirect_to obituary_path(@obituary.id)
     else
       flash[:error] = @obituary.errors.full_messages.to_sentence
@@ -41,8 +38,8 @@ class ObituariesController < ApplicationController
 
   def destroy
     Obituary.find(params[:id]).destroy
-    flash[:notice] = 'Obituary Deleted'
-    redirect_to '/'
+    flash[:notice] = 'Obituary was successfully deleted.'
+    redirect_to '/profile'
   end
 
   private

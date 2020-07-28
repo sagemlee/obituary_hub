@@ -23,6 +23,12 @@
   background-repeat: no-repeat;
 }
 
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
 .darktan_body {
   background: #e2e3dc;
 }
@@ -124,7 +130,7 @@ body {
 
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
-  background-color: #edeeea; // Choose your own color here
+  background-color: #f8f9fa; // Choose your own color here
 }
 
 .form-label-group input {
