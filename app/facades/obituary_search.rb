@@ -14,4 +14,11 @@ class ObituarySearch
     end
   end
 
+  def recent_obituaries
+    json = ObituaryService.new.get_recent_obituaries
+    json.map do |obituary_data|
+      ApiObituary.new(obituary_data)
+    end
+  end
+
 end

@@ -16,6 +16,11 @@ class ObituaryService
     JSON.parse(resp.body, symbolize_names: true)
   end
 
+  def get_recent_obituaries
+    resp = conn.get('/recent')
+    JSON.parse(resp.body, symbolize_names: true)
+  end
+
 
 
   private
