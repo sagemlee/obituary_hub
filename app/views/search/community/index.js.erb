@@ -1,1 +1,5 @@
 $("#community-results").html("<%= j render 'index' %>");
+
+$('#community-check-box').change(function() {
+  $('#community-table').toggle();
+});

@@ -1,1 +1,5 @@
 $('#nytimes-results').html("<%= j render 'index' %>")
+
+$('#nytimes-check-box').change(function() {
+  $('#nytimes-table').toggle();
+});
