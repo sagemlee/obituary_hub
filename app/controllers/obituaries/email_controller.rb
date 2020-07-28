@@ -11,7 +11,7 @@ class Obituaries::EmailController < ApplicationController
                        recipient: params[:recipient_name], 
                        message: @email.message
                     }
-        RecipientNotifierMailer.inform(email_info, recipient).deliver_now 
+        ShareObituaryMailer.inform(email_info, recipient).deliver_now 
         flash[:notice] = "You Have Successfully Shared this Obituary in Email"
 
         redirect_to "/obituaries/#{params[:obit_it]}"
