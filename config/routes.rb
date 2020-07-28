@@ -13,6 +13,7 @@ Rails.application.routes.draw do
      get 'recent', to: 'recent#index'
      get 'community', to: 'community#index'
      get '/:id/share', to: 'email#new'
+     post '/:id/share', to: 'email#create'
    end
    resources :obituaries
    get '/search', to: 'search#index'
