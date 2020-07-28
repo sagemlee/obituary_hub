@@ -2,7 +2,7 @@
 <div class="container", style= "background-color:white;">
 
   <!-- Portfolio Item Heading -->
-  <h1 class="my-4"><%="#{@obituary.first_name} #{@obituary.last_name}"%></h1>
+  <h1 class="my-4"><%="#{@obituary.name}"%></h1>
 
   <!-- Portfolio Item Row -->
   <div class="row" style="padding-bottom: 50px;">
@@ -16,8 +16,9 @@
       <p><%= @obituary.description %></p>
       <h3 class="my-3">Details</h3>
       <ul class="no-bullets">
+        <li><b>Date Published: </b><%= @obituary.date %></li>
         <li><b>Age: </b><%= @obituary.age %></li>
-        <li><b>Location: </b><%= @obituary.city %>, <%= @obituary.state %></li>
+        <li><b>Location: </b><%= @obituary.location %></li>
         <% if @obituary.covid == true %>
           <br><li><i><%= "This person died from COVID-19." %></i></li>
           <li><%= link_to "Read more obituaries of people who died from COVID-19.", obituaries_covid_19_path %></li>
