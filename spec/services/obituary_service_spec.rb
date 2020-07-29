@@ -18,6 +18,7 @@ describe "ObituaryService" do
 
     expect(obituaries).to be_a Array
     expect(obituaries.first).to be_a Hash
-    expect(obituaries.first[:data][:attributes][:abstract].downcase.include?('coronavirus')).to eq(true)
+
+    expect(obituaries.first[:data][:attributes][:abstract].downcase.include?('coronavirus') || obituaries.first[:data][:attributes][:abstract].downcase.include?('covid')).to eq(true)
   end
 end
