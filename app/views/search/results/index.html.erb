@@ -1,4 +1,29 @@
 <div class="container">
-  <h1>Search Results</h1>
-  <%= render partial: "nytimes_index" %>
+  <h1 class="my-4" id="results-header">Search Results</h1>
+  <input type="button" id="change" value="View NYTimes Results" class="btn btn-outline-secondary mr-1">
+  <div>
+    <div id="nytimes-results" class="hide-dom">
+      <%= render partial: 'nytimes_index' %>
+    </div>
+    <div id="community-results">
+      <%= render partial: 'community_table_index' %>
+    </div>
+  </div>
 </div>
+
+<script type="text/javascript">
+  $('#change').click(function() {
+     $('#community-results, #nytimes-results').toggle();
+    $(this).prop('value') == 'View NYTimes Results' ? communityText() : nytimesText();
+  });
+
+  function communityText() {
+    $('#change').prop('value', 'View Community Results')
+    $('#results-header').text('NYTimes Search Results for <%= @name %>:')
+  }
+
+  function nytimesText() {
+    $('#change').prop('value', 'View NYTimes Results')
+    $('#results-header').text('Community Search Results for <%= @name %>:')
+  }
+</script>
