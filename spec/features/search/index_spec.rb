@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Search index page" do
-  it "can enter a name and show all obituaries with that name" do
+  it "can enter a name and show all obituaries with that name", :vcr do
 
     visit "/"
     within "form#search_form" do
