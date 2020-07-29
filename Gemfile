@@ -40,6 +40,8 @@ group :development, :test do
   gem 'faker'
   gem 'pry-rescue'
   gem 'pry-stack_explorer'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 group :development do

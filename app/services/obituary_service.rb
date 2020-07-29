@@ -22,7 +22,6 @@ class ObituaryService
   end
 
   def get_advanced_obituaries(name, year)
-
     resp = conn.get('/advanced') do |req|
       req.params['name'] = "#{name}"
       req.params['date'] = year.to_i
