@@ -2,13 +2,13 @@
   <div class="col-sm-9 col-md-7 col-lg-8 mx-auto">
     <br><h1 class="card-title text-center">Advanced Search Options</h1>
     <div class="card card-search my-5">
-      <%= form_tag "/search/advanced", method: :get, class: 'submit-form' %>
+      <%= form_tag "/obituaries/advanced", method: :get, class: 'submit-form' %>
         <div class="card-body" style= "background-color:white; text-align:center;">
           <p class="card-title">Use this form to search a single field or multiple fields.</p>
           <div class="form-group-search row">
             <div class="col col-form-label-lg">
                 <%= label_tag 'Name'%>
-                <%= text_field :name, nil, placeholder: "Search by Name", class: "form-control" %>
+                <%= text_field_tag :name, nil, placeholder: "Search by Name", class: "form-control", id: "name_id" %>
             </div>
           </div>
 
@@ -46,7 +46,9 @@
               <%= select_tag :source, options_for_select(["ObituaryHub Community", "The New York Times"]), {class: 'custom-select' }  %>
             </div>
           </div><br>
-          <button class="btn btn-submit btn-lg btn-dark btn-primary btn-block text-uppercase" type="submit" id="submit">Search</button>
+          <div class="advanced_search">
+            <button class="btn btn-submit btn-lg btn-dark btn-primary btn-block text-uppercase" type="submit" id="submit">Search</button>
+          </div>
         </div>
   </div>
 </div>

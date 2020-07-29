@@ -5,17 +5,24 @@ class ApiObituary
               :abstract,
               :web_url,
               :pub_date,
-              :word_count
+              :word_count,
+              :image
 
   def initialize(info)
+
     @headline = info[:data][:attributes][:headline]
     @abstract = info[:data][:attributes][:abstract]
     @web_url = info[:data][:attributes][:web_url]
     @pub_date = format_date(info[:data][:attributes][:pub_date])
     @word_count = info[:data][:attributes][:word_count]
+    @image = format_image(info[:data][:attributes][:image])
   end
 
   def format_date(date)
     date.split("T")[0].to_date.strftime("%B %-d, %Y")
+  end
+
+  def format_image(url)
+    "https://static01.nyt.com/".concat(url)
   end
 end

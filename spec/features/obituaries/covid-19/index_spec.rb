@@ -27,7 +27,7 @@ describe "As a visitor" do
     click_on "COVID-19 Obituaries"
 
     expect(current_path).to eq('/obituaries/covid-19')
-  
+
     within(first(".covid_obituary")) do
 
       expect(page).to have_css(".headline")
@@ -49,6 +49,10 @@ describe "As a visitor" do
       expect(page).to have_css(".word_count")
       word_count = find(".word_count").text
       expect(word_count).not_to be_empty
+
+      expect(page).to have_css(".image")
+      image = find(".image").text
+      expect(image).not_to be_empty
     end
   end
 end
