@@ -1,7 +1,18 @@
 require 'rails_helper'
 
 describe "As a Visitor" do
-  it "I can see the recent obituaries from the api" do
+  it "I can see obituaries from database", :vcr do
+    user = create(:user)
+    obituary = create(:obituary, user_id: user.id)
+    obituary2 = create(:obituary, user_id: user.id)
+
+    visit '/'
+    click_on "Recently Published"
+
+    expect(current_path).to eq('/obituaries/recent')
+
+  end
+  it "I can see the recent obituaries from the api", :vcr do
     visit '/'
 
     click_on "Recently Published"

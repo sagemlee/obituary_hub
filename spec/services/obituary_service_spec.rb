@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "ObituaryService" do
-  it "returns obituary hashes" do
+  it "returns obituary hashes", :vcr do
     service  = ObituaryService.new
     obituaries = service.get_obituaries
 
@@ -12,7 +12,7 @@ describe "ObituaryService" do
     expect(obituaries.first[:data][:attributes]).to have_key :headline
   end
 
-  it "returns covid obituaries" do
+  it "returns covid obituaries", :vcr do
     service  = ObituaryService.new
     obituaries = service.get_covid_obituaries
 
