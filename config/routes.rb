@@ -28,4 +28,6 @@ Rails.application.routes.draw do
     namespace :search do
       get 'advanced', to: 'advanced#index'
    end
+
+   get '/404', to: "errors#not_found"
 end

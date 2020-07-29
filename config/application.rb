@@ -29,3 +29,5 @@ module ObituaryHub
     config.generators.system_tests = nil
   end
 end
+
+ config.exceptions_app = self.routes
