@@ -23,6 +23,6 @@ class ApiObituary
   end
 
   def format_image(url)
-    "https://static01.nyt.com/".concat(url)
+    # "https://static01.nyt.com/".concat(url)
   end
 end
