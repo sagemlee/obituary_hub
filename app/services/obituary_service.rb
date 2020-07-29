@@ -21,8 +21,7 @@ class ObituaryService
     JSON.parse(resp.body, symbolize_names: true)
   end
 
-  def get_advanced_obituaries(name, year)
-
+  def advanced_search_name_and_year(name, year)
     resp = conn.get('/advanced') do |req|
       req.params['name'] = "#{name}"
       req.params['date'] = year.to_i
@@ -30,7 +29,12 @@ class ObituaryService
     JSON.parse(resp.body, symbolize_names: true)
   end
 
-
+  def advanced_search_year(year)
+    resp = conn.get('/advanced') do |req|
+      req.params['date'] = year.to_i
+    end
+    JSON.parse(resp.body, symbolize_names: true)
+  end
 
   private
 

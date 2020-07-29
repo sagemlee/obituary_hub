@@ -14,38 +14,25 @@
 
           <div class="form-group-search row">
             <div class="col col-form-label-lg">
-              <%= label_tag 'City' %>
-              <%= text_field_tag :city, nil, placeholder: 'Search by City', class: "form-control" %>
-            </div>
-          </div>
-
-          <div class="form-group-search row">
-            <div class="col col-form-label-lg" >
-              <%= label_tag :state %>
-              <%= select_tag :state, options_for_select(us_states), {class: 'custom-select' }  %>
+              <%= label_tag 'Location' %>
+              <%= text_field_tag :location, nil, placeholder: 'Search by Location', class: "form-control" %>
             </div>
           </div>
 
           <div class="form-group-search row" id="age-select">
             <div class="col col-form-label-lg" >
               <%= label_tag :age %>
-              <%= select_tag :age, options_for_select((0..150), 100), {class: 'custom-select' } %>
+              <%= select_tag :age, options_for_select((0..150), { }), {class: 'custom-select' } %>
             </div>
           </div>
 
           <div class="form-group-search row" id="year-select">
             <div class="col col-form-label-lg" >
               <%= label_tag :year %>
-              <%= select_tag :year, options_for_select((1981..2020), 2020), {class: 'custom-select' } %>
+              <%= select_tag :year, options_for_select((1981..2020), { }), {class: 'custom-select' } %>
             </div>
           </div>
 
-          <div class="form-group-search row" id="source-select">
-            <div class="col col-form-label-lg" >
-              <%= label_tag :source %>
-              <%= select_tag :source, options_for_select(["ObituaryHub Community", "The New York Times"]), {class: 'custom-select' }  %>
-            </div>
-          </div><br>
           <div class="advanced_search">
             <button class="btn btn-submit btn-lg btn-dark btn-primary btn-block text-uppercase" type="submit" id="submit">Search</button>
           </div>
