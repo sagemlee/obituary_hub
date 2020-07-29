@@ -17,7 +17,7 @@
           <td id="pub_date" class="align-middle pl-3"><%= obit.pub_date %></td>
           <td id="abstract" class="align-middle pl-3"><%= obit.abstract %></td>
           <td id="word_count" class="align-middle pl-3"><%= obit.word_count %></td>
-          <td id="web_url" class="align-middle pl-3"><%= link_to obit.web_url %></td>
+          <td id="web_url" class="align-middle pl-3"><%= link_to obit.web_url, obit.web_url %></td>
         </tr>
       <% end %>
     </tbody>
