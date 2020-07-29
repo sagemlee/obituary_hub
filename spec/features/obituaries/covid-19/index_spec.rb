@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "As a visitor" do
-  it "I can see obituaries for covid victims" do
+  it "I can see obituaries for covid victims", :vcr do
 
     user = create(:user)
     obituary = create(:obituary, user_id: user.id)
@@ -21,7 +21,7 @@ describe "As a visitor" do
     expect(page).to_not have_content(obituary2.description)
   end
 
-  it "I can see the covid obituaries from the api", js: true do
+  it "I can see the covid obituaries from the api", :vcr do
 
     visit '/obituaries/covid-19'
 

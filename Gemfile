@@ -21,6 +21,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'sprockets-rails'
 gem 'bootstrap', '~> 4.0.0'
 
+group :test do
+  gem 'webmock'
+  gem 'vcr'
+end
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

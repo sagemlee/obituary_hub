@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "As a visitor" do
-  it "I can search obituaries based on a variety of attributs" do
+  it "I can search obituaries based on a variety of attributs", :vcr do
 
     user = create(:user)
     5.times do
@@ -24,7 +24,7 @@ describe "As a visitor" do
     expect(page).to have_button("Search")
   end
 
-  it "I can see the results from the NYT API" do
+  it "I can see the results from the NYT API", :vcr do
 
     visit '/search/advanced'
 

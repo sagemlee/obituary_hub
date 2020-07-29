@@ -153,3 +153,10 @@ OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
       }
   }
   })
+
+  VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.filter_sensitive_data('<NYT_API_KEY>') { ENV['NYT_API_KEY'] }
+  config.configure_rspec_metadata!
+end
