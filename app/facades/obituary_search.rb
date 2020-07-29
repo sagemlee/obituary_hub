@@ -32,8 +32,10 @@ class ObituarySearch
         json = ObituaryService.new.advanced_search_year(params[:year])
       end
     end
-    json.map do |obituary_data|
-      ApiObituary.new(obituary_data)
+    if json.present?
+      json.map do |obituary_data|
+        ApiObituary.new(obituary_data)
+      end
     end
   end
 
@@ -45,11 +47,10 @@ class ObituarySearch
     elsif params.keys.include?(:location)
       query_results << Obituary.where("city ILIKE ? OR state ILIKE ?", "%#{params[:location]}%", "%#{params[:location]}%").pluck(:id)
     elsif params.keys.include?(:age)
-      query_results << Obituary.where("age = ?", "%#{params[:age]}%").pluck(:id)
+      query_results << Obituary.where("age = ?", "#{params[:age]}").pluck(:id)
     elsif params.keys.include?(:year)
       query_results << Obituary.where("created_at ILIKE ?", "%#{params[:year]}%").pluck(:id)
     end
-    binding.pry
     query_results.flatten.uniq
   end
 
