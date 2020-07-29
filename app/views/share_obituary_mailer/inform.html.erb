@@ -1,6 +1,9 @@
-Hello,
-
-<%= @user.first_name %> would like to share this obituary with you : <%= @message %>
-
+Hello <%=@recipient_name%>,
+<br>
+<br>
+<%= @sender.first_name %> would like to share this obituary with you.<a href="/obituaries/<%=@obit_id%>" > link to obituary</a>
+<br>
+<br>
 Sincerely,
+<br>
 Obituary Hub Team

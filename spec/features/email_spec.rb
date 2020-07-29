@@ -19,32 +19,16 @@ RSpec.describe 'User can send emails' do
     expect(current_path).to eq("/obituaries/#{obit.id}/share")
 
     fill_in :recipient_email, with: "bob@bob.com"
-   # fill_in :recipient_name, with: "bob"
+    fill_in :recipient_name, with: "bob"
     click_on "Send Email"
 
     email = ActionMailer::Base.deliveries.last
     expect(email.from).to have_content(["obituaryhub@gmail.com"])
     expect(email.to).to have_content(["bob@bob.com"])
-    expect(email.text_part.body).to have_content("#{user.first_name} would like to share this obituary with you :")
+    expect(email.text_part.body).to have_content("#{user.first_name} would like to share this obituary with you")
 
     expect(current_path).to eq("/obituaries/#{obit.id}")
     expect(page).to have_content("You Have Successfully Shared this Obituary in Email")
   end 
 end 
 
-
-
-
-# As a registered user
-# When I visit an obituary show page
-# And I click "Send in Email"
-# Then I should be on 'obituaries/id/share'
-
-# And when I fill in "Email" with
-# And I click on "Send in Email"
-# Then I should be on /dashboard
-# And I should see a message that says "Successfully shared obituary in email"
-
-# Hello,
-
-# <Sender's name as it appears in database or on facebook> has shared a published obituary from Obituary Hub. You can view the post <here (should be a link to obituary)>.
