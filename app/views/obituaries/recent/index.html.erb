@@ -1,39 +1,4 @@
 <div class="container">
-  <h1 class="my-4">Recently Published Obituaries</h1>
-  <% @obituaries.each do |obit| %>
-    <div class="row" style= "background-color:white;">
-      <div class="col-md-3 p-4">
-        <%= link_to image_tag(obit.image_url), "/obituaries/#{obit.id}" %>
-      </div>
-      <div class="col-md-9 p-4">
-        <h3><%= "#{obit.first_name} #{obit.last_name}" %></h3>
-        <p><%= obit.description %></p>
-        <a class="btn btn-dark" href= <%= "/obituaries/#{obit.id}" %>>View Obituary</a>
-      </div>
-    </div>
-    <hr>
-  <% end %>
-
-  <% @obituaries_api.each do |obit| %>
-    <section class="recent_obituary">
-      <div class="headline">
-        <%= obit.headline %>
-      </div>
-      <div class="abstract">
-        <%= obit.abstract %>
-      </div>
-      <div class="web_url">
-        <%= obit.web_url %>
-      </div>
-      <div class="pub_date">
-        <%= obit.pub_date %>
-      </div>
-      <div class="word_count">
-        <%= obit.word_count %>
-      </div>
-      <div class="image">
-        <%= obit.image %>
-      </div>
-    </section>
-  <% end %>
+  <%= render partial: "browsing_index", locals: {action: "Community Published" }  %>
+  <%= render partial: "nytimes_index" %>
 </div>
