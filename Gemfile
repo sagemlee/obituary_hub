@@ -21,6 +21,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'sprockets-rails'
 gem 'bootstrap', '~> 4.0.0'
 
+group :test do
+  gem 'webmock'
+  gem 'vcr'
+end
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -35,6 +40,8 @@ group :development, :test do
   gem 'faker'
   gem 'pry-rescue'
   gem 'pry-stack_explorer'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 group :development do
@@ -51,5 +58,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
 gem 'figaro'
+gem 'sendgrid-ruby'
+gem 'omniauth-google-oauth2'
+

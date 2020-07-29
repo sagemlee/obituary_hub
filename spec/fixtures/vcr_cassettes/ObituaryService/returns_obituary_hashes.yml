@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://obituary-microservice.herokuapp.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/html;charset=utf-8
+      Content-Length:
+      - '5578'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - WEBrick/1.4.2 (Ruby/2.6.6/2020-03-31)
+      Date:
+      - Wed, 29 Jul 2020 16:34:29 GMT
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"data":{"type":"obituary","attributes":{"headline":"Jose Jaime Pierluisi,
+        28, an Aide To Puerto Rico Governor, Dies","abstract":"  Jose Jaime Pierluisi,
+        an aide to to the Governor of Puerto Rico, was killed on Tuesday night during
+        a robbery in the San Juan area. He was 28 years old.   Mr. Pierluisi, the
+        brother of Puerto Rico''s Justice Secretary, was fatally shot just before
+        midnight in what the police said was a carjacking outside his parents'' home
+        in the affluent Condado section of the capital. The thieves stole his car,
+        wallet and briefcase, the police said.","web_url":"https://www.nytimes.com/1994/06/11/obituaries/jose-jaime-pierluisi-28-an-aide-to-puerto-rico-governor-dies.html","pub_date":"1994-06-11T05:00:00+0000","word_count":514,"image":null}}},{"data":{"type":"obituary","attributes":{"headline":"Margaret
+        P. Monynihan, Nurse, 82","abstract":"LEAD: Margaret Phipps Moynihan, a retired
+        registered nurse and the mother of United States Senator Daniel Patrick Moynihan,
+        died yesterday in Jeffersonville, Ind. She was 82 years old and lived in Jeffersonville.","web_url":"https://www.nytimes.com/1988/04/21/obituaries/margaret-p-monynihan-nurse-82.html","pub_date":"1988-04-21T05:00:00+0000","word_count":151,"image":null}}},{"data":{"type":"obituary","attributes":{"headline":"Ira
+        M. Ventry, 50, a Professor At Columbia Teachers College","abstract":"  Ira
+        M. Ventry, a professor of the science of hearing at Columbia University''s
+        Teachers College, died of cancer on Saturday at Mount Sinai Hospital. He was
+        50 years old and a resident of Manhattan.","web_url":"https://www.nytimes.com/1983/04/05/obituaries/ira-m-ventry-50-a-professor-at-columbia-teachers-college.html","pub_date":"1983-04-05T05:00:00+0000","word_count":132,"image":null}}},{"data":{"type":"obituary","attributes":{"headline":"Danitra
+        Vance, 35, an Actress; Worked at Shakespeare Festival","abstract":"  Danitra
+        Vance, an actress and performance artist who appeared in \"The Colored Museum\"
+        and \"Spunk\" at the New York Shakespeare Festival, died on Sunday at the
+        home of her grandfather, Clarence M. Edwards, in Markham, Ill. She was 35
+        and lived in Brooklyn.   The cause was breast cancer, said her companion,
+        Jones Miller.","web_url":"https://www.nytimes.com/1994/08/23/obituaries/danitra-vance-35-an-actress-worked-at-shakespeare-festival.html","pub_date":"1994-08-23T05:00:00+0000","word_count":371,"image":null}}},{"data":{"type":"obituary","attributes":{"headline":"GALO
+        PLAZA, EX-ECUADOR LEADER","abstract":"LEAD: Galo Plaza Lasso, a former President
+        of Ecuador who later served as Secretary General of the Organization of American
+        States, died yesterday in Quito. He was 80 years old.","web_url":"https://www.nytimes.com/1987/01/29/obituaries/galo-plaza-ex-ecuador-leader.html","pub_date":"1987-01-29T05:00:00+0000","word_count":462,"image":null}}},{"data":{"type":"obituary","attributes":{"headline":"Survivor
+        of Titanic Dies","abstract":"  A Titanic survivor died in his home 74 years
+        to the day after the luxury liner hit an iceberg in the North Atlantic. Mortimer
+        Howell Cobb, who was traveling aboard the ship as a 7-year-old boy with his
+        German governess, died of cancer Monday at the age of 81. He had been a member
+        of the United States Maritime Service and a champion croquet player.","web_url":"https://www.nytimes.com/1986/04/16/obituaries/survivor-of-titanic-dies.html","pub_date":"1986-04-16T05:00:00+0000","word_count":72,"image":null}}},{"data":{"type":"obituary","attributes":{"headline":"Robert
+        W. Marks; Writer, 85","abstract":"  Robert W. Marks, a writer and editor who
+        worked in New York for more than 40 years, died on Aug. 8 in Charleston, S.C.,
+        the hometown to which he returned 20 years ago. He was 85.   The cause was
+        pneumonia, said his wife, Alice.","web_url":"https://www.nytimes.com/1993/08/26/obituaries/robert-w-marks-writer-85.html","pub_date":"1993-08-26T05:00:00+0000","word_count":145,"image":null}}},{"data":{"type":"obituary","attributes":{"headline":"Eugene
+        Fodor, Creator of Guides For Worldwide Travel, Dies at 85","abstract":"  Eugene
+        Fodor, whose travel guides have been carried by tourists to the far corners
+        of the world for more than half a century, died last night at the Charlotte
+        Hungerford Hospital in Torrington, Conn. He was 85 years old and lived in
+        Litchfield, Conn.    He died of a brain tumor, said a business associate,
+        Robert Fisher.","web_url":"https://www.nytimes.com/1991/02/19/obituaries/eugene-fodor-creator-of-guides-for-worldwide-travel-dies-at-85.html","pub_date":"1991-02-19T05:00:00+0000","word_count":568,"image":null}}},{"data":{"type":"obituary","attributes":{"headline":"D.
+        S. Kane Dies at 81; Lawyer and Professor","abstract":"LEAD: David Schilling
+        Kane, a former president of the American Patent Law Association and former
+        adjunct professor at the New York University School of Law, died of cancer
+        Saturday at Naples (Fla.) Community Hospital. Mr. Kane was 81 years old and
+        lived in Manhattan.","web_url":"https://www.nytimes.com/1988/02/02/obituaries/d-s-kane-dies-at-81-lawyer-and-professor.html","pub_date":"1988-02-02T05:00:00+0000","word_count":159,"image":null}}},{"data":{"type":"obituary","attributes":{"headline":"Terrence
+        L. Smith Dies; Mystery Writer Was 46","abstract":"LEAD: Terrence Lore Smith,
+        an author of mystery novels, died Wednesday in a traffic accident. He was
+        46 years old and lived in Woodland Park, Colo.","web_url":"https://www.nytimes.com/1988/12/09/obituaries/terrence-l-smith-dies-mystery-writer-was-46.html","pub_date":"1988-12-09T05:00:00+0000","word_count":194,"image":null}}}]'
+  recorded_at: Wed, 29 Jul 2020 16:34:29 GMT
+recorded_with: VCR 6.0.0

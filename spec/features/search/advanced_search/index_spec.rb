@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "As a visitor" do
-  it "I can search obituaries based on a variety of attributs" do
+  it "I can search obituaries based on a variety of attributs", :vcr do
 
     user = create(:user)
     5.times do
@@ -24,12 +24,9 @@ describe "As a visitor" do
     expect(page).to have_button("Search")
   end
 
-  it "I can see the results from the NYT API" do
-    visit '/'
+  it "I can see the results from the NYT API", :vcr do
 
-    click_on "Advanced Search Options"
-
-    expect(current_path).to eq('/search/advanced')
+    visit '/search/advanced'
 
     fill_in :name, with: "George", id: "name_id"
     select 2019, from: :year
@@ -38,31 +35,28 @@ describe "As a visitor" do
     end
 
 
-    within(first(".advanced_obituary")) do
-
-      expect(page).to have_css(".headline")
-      headline = find(".headline").text
+    within(first("#obituary_by_name")) do
+      expect(page).to have_css("#headline")
+      headline = find("#headline").text
       expect(headline).not_to be_empty
 
-      expect(page).to have_css(".abstract")
-      abstract = find(".abstract").text
+      expect(page).to have_css("#abstract")
+      abstract = find("#abstract").text
       expect(abstract).not_to be_empty
 
-      expect(page).to have_css(".web_url")
-      web_url = find(".web_url").text
+      expect(page).to have_css("#web_url")
+      web_url = find("#web_url").text
       expect(web_url).not_to be_empty
 
-      expect(page).to have_css(".pub_date")
-      pub_date = find(".pub_date").text
+      expect(page).to have_css("#pub_date")
+      pub_date = find("#pub_date").text
       expect(pub_date).not_to be_empty
 
-      expect(page).to have_css(".word_count")
-      word_count = find(".word_count").text
+      expect(page).to have_css("#word_count")
+      word_count = find("#word_count").text
       expect(word_count).not_to be_empty
 
-      expect(page).to have_css(".image")
-      image = find(".image").text
-      expect(image).not_to be_empty
+      expect(page).to have_css("#image")
     end
   end
 
