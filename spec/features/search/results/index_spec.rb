@@ -35,7 +35,7 @@ describe "As a visitor" do
     end
   end
 
-  it "I can see the results from NYT for just a year", :vcr do
+  xit "I can see the results from NYT for just a year", :vcr do
     visit '/'
 
     click_on "Advanced Search Options"
@@ -104,7 +104,8 @@ describe "As a visitor" do
 
       expect(current_path).to eq('/search/results')
 
-      expect(page).to have_content(obituary.description)
+      expect(page).to have_content(obituary.name)
+      expect(page).to have_content(obituary.location)
     end
 
     it "I can see the result for an age" do
@@ -133,10 +134,11 @@ describe "As a visitor" do
 
       expect(current_path).to eq('/search/results')
 
-      expect(page).to have_content(obituary.description)
+      expect(page).to have_content(obituary.name)
+      expect(page).to have_content(obituary.location)
     end
 
-    it "I can see the results for multiple fields" do
+    it "I can see the results for multiple fields", :vcr do
       user = create(:user)
       obituary = Obituary.create!({
         first_name: "Bill",
@@ -165,6 +167,7 @@ describe "As a visitor" do
 
       expect(current_path).to eq('/search/results')
 
-      expect(page).to have_content(obituary.description)
+      expect(page).to have_content(obituary.name)
+      expect(page).to have_content(obituary.location)
     end
   end
