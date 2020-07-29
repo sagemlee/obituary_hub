@@ -18,8 +18,6 @@ Rails.application.routes.draw do
    get '/search', to: 'search#index'
    namespace :search do
      get 'advanced', to: 'advanced#index'
-     get 'nytimes', to: 'nytimes#index'
-     get 'community', to: 'community#index'
    end
 
 end
