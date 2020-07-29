@@ -8,8 +8,9 @@ Rails.application.routes.draw do
     get "/auth/google_oauth2/callback", to: "google#create"
     delete "/logout", to: "sessions#destroy"
     get '/profile', to: "users#show"
-   resources :users, only: [:new, :create]
-   namespace :obituaries do
+    resources :users, only: [:new, :create]
+    resources :obituaries
+    namespace :obituaries do
      get 'covid-19', to: 'covid#index'
      get 'recent', to: 'recent#index'
      get 'community', to: 'community#index'
@@ -17,7 +18,6 @@ Rails.application.routes.draw do
      post '/:id/share', to: 'email#create'
      get 'advanced', to: 'advanced#index'
    end
-   resources :obituaries
    get '/search', to: 'search#index'
    namespace :search do
      get 'advanced', to: 'advanced#index'
