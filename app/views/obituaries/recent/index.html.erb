@@ -1,4 +1,27 @@
 <div class="container">
-  <%= render partial: "browsing_index", locals: {action: "Community Published" }  %>
-  <%= render partial: "nytimes_index" %>
+  <h1 class="my-4" id="results-header">Recently Posted Community Obituaries:</h1>
+  <input type="button" id="change" value="View NYTimes Results" class="btn btn-outline-secondary mr-1">
+  <div id="community-results">
+    <%= render partial: "browsing_index" %>
+  </div>
+  <div id="nytimes-results" class="hide-dom">
+    <%= render partial: "nytimes_index" %>
+  </div>
 </div>
+
+<script type="text/javascript">
+  $('#change').click(function() {
+     $('#community-results, #nytimes-results').toggle();
+    $(this).prop('value') == 'View NYTimes Results' ? communityText() : nytimesText();
+  });
+
+  function communityText() {
+    $('#change').prop('value', 'View Community Results')
+    $('#results-header').text('Recently Posted NYTimes Obituaries:')
+  }
+
+  function nytimesText() {
+    $('#change').prop('value', 'View NYTimes Results')
+    $('#results-header').text('Recently Posted Community Obituaries:')
+  }
+</script>

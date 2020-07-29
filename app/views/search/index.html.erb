@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="my-4">Search Results for <%= @name %>:</h1>
+  <h1 class="my-4" id="results-header">Community Search Results for <%= @name %>:</h1>
   <input type="button" id="change" value="View NYTimes Results" class="btn btn-outline-secondary mr-1">
   <div>
     <div id="nytimes-results" class="hide-dom">
@@ -19,9 +19,11 @@
 
   function communityText() {
     $('#change').prop('value', 'View Community Results')
+    $('#results-header').text('NYTimes Search Results for <%= @name %>:')
   }
 
   function nytimesText() {
     $('#change').prop('value', 'View NYTimes Results')
+    $('#results-header').text('Community Search Results for <%= @name %>:')
   }
 </script>
