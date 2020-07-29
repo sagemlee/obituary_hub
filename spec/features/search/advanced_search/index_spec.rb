@@ -65,4 +65,20 @@ describe "As a visitor" do
       expect(image).not_to be_empty
     end
   end
+
+  it "will render error if only one field is filed out" do
+    visit '/'
+
+    click_on "Advanced Search Options"
+
+    expect(current_path).to eq('/search/advanced')
+
+
+    within ".advanced_search" do
+      click_on 'Search'
+    end
+
+    expect(current_path).to eq("/search/advanced")
+    expect(page).to have_content("Please fill out name for NYT Search")
+  end
 end
