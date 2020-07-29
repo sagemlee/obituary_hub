@@ -1,8 +1,8 @@
 class ShareObituaryMailer < ApplicationMailer
-  def inform(info, recipient)
-    @user = info[:user]
-    @message = info[:message]
-    @recipient = info[:recipient]
-    mail(to: recipient, subject: "#{@user.name} is sharing an obituary with you")
+  def inform(recipient, sender)
+    @user = sender
+    @recipient = recipient
+    
+    mail(to: recipient, subject: "#{@user.first_name} is sharing an obituary with you")
   end
 end

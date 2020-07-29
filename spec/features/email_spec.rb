@@ -19,9 +19,15 @@ RSpec.describe 'User can send emails' do
     expect(current_path).to eq("/obituaries/#{obit.id}/share")
 
     fill_in :recipient_email, with: "bob@bob.com"
+   # fill_in :recipient_name, with: "bob"
     click_on "Send Email"
 
-    expect(current_path).to eq("obituaries/#{obit.id}")
+    email = ActionMailer::Base.deliveries.last
+    expect(email.from).to have_content(["obituaryhub@gmail.com"])
+    expect(email.to).to have_content(["bob@bob.com"])
+    expect(email.text_part.body).to have_content("#{user.first_name} would like to share this obituary with you :")
+
+    expect(current_path).to eq("/obituaries/#{obit.id}")
     expect(page).to have_content("You Have Successfully Shared this Obituary in Email")
   end 
 end 
