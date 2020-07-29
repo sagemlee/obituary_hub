@@ -49,6 +49,10 @@ We had the normal challenges with remote group work, but were able to rely on Gi
 
 ![Schema](/public/images/schema.png)
 
+## Design Strategy
+
+Since this was a school project, we tried our best to demonstrate our understanding of the 4 Pillars of Object Oriented Programming as well as ReSTful APIs and ReSTful routes. Evidence of these efforts can be found in the encapsulation of our microservice, our use of partials for rendering the different views, and our adherence to MVC. All our API endpoints (found below) are ReSTful, compliant with the JSON API spec through the use of serializers, and exposed under an api/v1 namespace.
+
 ## Microservice
 
 ## API
@@ -60,6 +64,8 @@ Endpoints:
 
 
 ## Optimization
+
+Once we got the microservice hooked up to our Heroku app, we immediately discovered that 
 
 ## Extensions
 
