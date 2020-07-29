@@ -15,11 +15,9 @@ describe "As a visitor" do
     expect(current_path).to eq('/search/advanced')
 
     expect(page).to have_content("Name")
-    expect(page).to have_content("City")
-    expect(page).to have_content("State")
+    expect(page).to have_content("Location")
     expect(page).to have_content("Age")
     expect(page).to have_content("Year")
-    expect(page).to have_content("Source")
 
     expect(page).to have_button("Search")
   end
@@ -83,18 +81,33 @@ describe "As a visitor" do
   end
 
   it "I can see the results for a year" do
+
+    user = create(:user)
+    obituary = Obituary.create!({
+      first_name: "Bill",
+      last_name: Faker::Name.last_name,
+      age: Faker::Number.within(range: 45..110),
+      city: Faker::Address.city,
+      state: Faker::Address.state_abbr,
+      description: Faker::Lorem.paragraph(sentence_count: 15),
+      image_url: Faker::Fillmurray.image,
+      user_id: user.id
+      })
+
     visit '/'
 
     click_on "Advanced Search Options"
 
     expect(current_path).to eq('/search/advanced')
 
-    select 2019, from: :year
+    select 2020, from: :year
     within ".advanced_search" do
       click_on 'Search'
     end
 
     expect(current_path).to eq('/search/results')
+
+    expect(page).to have_content(obituary.description)
 
     within(first(".advanced_obituary")) do
 
