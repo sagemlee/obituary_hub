@@ -22,7 +22,7 @@ class ObituarySearch
   end
 
   def advanced_query(params)
-    parse_params(params)
+    params = parse_params(params)
     if params.keys.include?(:name) && params.keys.include?(:year)
       json = ObituaryService.new.advanced_search_name_and_year(params[:name], params[:year])
     elsif params.keys.include?(:name) || params.keys.include?(:year)
@@ -38,14 +38,24 @@ class ObituarySearch
   end
 
   def advanced_query_local(params)
-    parse_params(params)
+    params = parse_params(params)
+    query_results = []
+    if params.keys.include?(:name)
+      query_results << Obituary.where("first_name ILIKE ? OR last_name ILIKE ?", "%#{params[:name]}%", "%#{params[:name]}%").pluck(:id)
+    elsif params.keys.include?(:location)
+      query_results << Obituary.where("city ILIKE ? OR state ILIKE ?", "%#{params[:location]}%", "%#{params[:location]}%").pluck(:id)
+    elsif params.keys.include?(:age)
+      query_results << Obituary.where("age = ?", "%#{params[:age]}%").pluck(:id)
+    elsif params.keys.include?(:year)
+      query_results << Obituary.where("created_at ILIKE ?", "%#{params[:year]}%").pluck(:id)
+    end
     binding.pry
+    query_results.flatten.uniq
   end
 
   def parse_params(params)
     query_params = {}
     params.each do |attribute, query|
-      binding.pry
       if attribute == "name" && query != ""
         query_params[:name] = query
       elsif attribute == "year" && query != "0"
