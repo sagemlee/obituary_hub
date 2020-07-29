@@ -17,10 +17,16 @@
 .masthead {
   height: 100vh;
   min-height: 500px;
-  background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
+  background-image: url("https://source.unsplash.com/BtbjCFUvBXs/1920x1080");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
 }
 
 .darktan_body {
@@ -33,7 +39,7 @@
 
 :root {
   --input-padding-x: 1.5rem;
-  --input-padding-y: .75rem;
+  --input-padding-y: 0.75rem;
 }
 
 body {
@@ -83,18 +89,21 @@ body {
 .form-signin .btn {
   font-size: 80%;
   border-radius: 5rem;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   font-weight: bold;
   padding: 1rem;
   transition: all 0.2s;
 }
 
-.big-checkbox {width: 20px; height: 20px;}
+.big-checkbox {
+  width: 20px;
+  height: 20px;
+}
 
 .btn-submit {
   font-size: 80%;
   border-radius: 5rem;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   font-weight: bold;
   padding: 1rem;
   transition: all 0.2s;
@@ -119,25 +128,23 @@ body {
   padding: 0.5rem;
 }
 
-.table-striped>tbody>tr:nth-child(odd)>td,
-.table-striped>tbody>tr:nth-child(odd)>th {
-   background-color: #edeeea; // Choose your own color here
- }
-
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #f8f9fa; // Choose your own color here
+}
 
 .form-label-group input {
   height: auto;
   border-radius: 2rem;
   width: 100%;
-
 }
 
-.form-label-group>input,
-.form-label-group>label {
+.form-label-group > input,
+.form-label-group > label {
   padding: var(--input-padding-y) var(--input-padding-x);
 }
 
-.form-label-group>label {
+.form-label-group > label {
   position: absolute;
   top: 0;
   left: 0;
@@ -148,8 +155,8 @@ body {
   line-height: 1.5;
   color: #495057;
   border: 1px solid transparent;
-  border-radius: .25rem;
-  transition: all .1s ease-in-out;
+  border-radius: 0.25rem;
+  transition: all 0.1s ease-in-out;
 }
 
 .form-label-group input::-webkit-input-placeholder {
@@ -177,7 +184,7 @@ body {
   padding-bottom: calc(var(--input-padding-y) / 3);
 }
 
-.form-label-group input:not(:placeholder-shown)~label {
+.form-label-group input:not(:placeholder-shown) ~ label {
   padding-top: calc(var(--input-padding-y) / 3);
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
@@ -187,6 +194,12 @@ body {
 .btn-google {
   color: white;
   background-color: #ea4335;
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
 }
 
 .btn-facebook {
@@ -194,7 +207,7 @@ body {
   background-color: #3b5998;
   font-size: 80%;
   border-radius: 5rem;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   font-weight: bold;
   padding: 1rem;
   transition: all 0.2s;
@@ -204,7 +217,7 @@ body {
 -------------------------------------------------- */
 
 @supports (-ms-ime-align: auto) {
-  .form-label-group>label {
+  .form-label-group > label {
     display: none;
   }
   .form-label-group input::-ms-input-placeholder {
@@ -215,9 +228,8 @@ body {
 /* Fallback for IE
 -------------------------------------------------- */
 
-@media all and (-ms-high-contrast: none),
-(-ms-high-contrast: active) {
-  .form-label-group>label {
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .form-label-group > label {
     display: none;
   }
   .form-label-group input:-ms-input-placeholder {
@@ -226,5 +238,5 @@ body {
 }
 
 .obituary-show {
-  background-color: #EAE7DC
+  background-color: #eae7dc;
 }

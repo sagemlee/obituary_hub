@@ -1,0 +1,23 @@
+<h1>Advanced Obituaries</h1>
+<% @obituaries_api.each do |obit| %>
+  <section class="advanced_obituary">
+    <div class="headline">
+      <%= obit.headline %>
+    </div>
+    <div class="abstract">
+      <%= obit.abstract %>
+    </div>
+    <div class="web_url">
+      <%= obit.web_url %>
+    </div>
+    <div class="pub_date">
+      <%= obit.pub_date %>
+    </div>
+    <div class="word_count">
+      <%= obit.word_count %>
+    </div>
+    <div class="image">
+      <%= obit.image %>
+    </div>
+  </section>
+<% end %>

@@ -9,8 +9,8 @@ describe "As a registered user" do
     visit obituary_path(obituary.id)
     click_link "Delete"
 
-    expect(current_path).to eq("/")
-    expect(page).to have_content("Obituary Deleted")
+    expect(current_path).to eq("/profile")
+    expect(page).to have_content("Obituary was successfully deleted.")
     expect(user.obituaries).to eq([])
   end
 

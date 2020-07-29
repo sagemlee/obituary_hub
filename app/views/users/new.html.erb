@@ -7,25 +7,26 @@
             <h5 class="card-title text-center">Sign Up</h5>
             <%= form_tag "/users", method: "create", :class => "form-signin" do %>
               <div class="form-label-group">
-                <%= label_tag :first_name %>
-                <%= text_field_tag :first_name %>
+                <%= text_field_tag :first_name, nil, {class: 'form-control'} %>
+                <%= label_tag :first_name  %>
               </div>
               <div class="form-label-group">
+                <%= text_field_tag :last_name, nil, {class: 'form-control'} %>
                 <%= label_tag :last_name %>
-                <%= text_field_tag :last_name %>
               </div>
               <div class="form-label-group">
+                <%= text_field_tag :email, nil, {class: 'form-control'} %>
                 <%= label_tag :email %>
-                <%= text_field_tag :email %>
               </div>
               <div class="form-label-group">
+                <%= password_field_tag :password, nil, {class: 'form-control'} %>
                 <%= label_tag :password %>
-                <%= password_field_tag :password %>
               </div>
               <button class="btn btn-lg btn-dark btn-primary btn-block text-uppercase" type="submit" id="submit">Sign Up</button>
               <% end %>
               <hr class="my-4">
               <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit" id="facebook_sign_in"><i class="fab fa-facebook-f mr-2"></i><a href= "/auth/facebook/" class="text-white">Sign Up with Facebook</a></button>
+              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit" id="google_sign_in"><i class="fab fa-facebook-f mr-2"></i><a href= "/auth/google_oauth2" class="text-white">Sign Up with Google</a></button>
             </div>
           </div>
         </div>

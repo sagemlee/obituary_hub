@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     get "/auth/facebook/callback", to: "facebook#create"
+    get "/auth/google_oauth2/callback", to: "google#create"
     delete "/logout", to: "sessions#destroy"
     get '/profile', to: "users#show"
    resources :users, only: [:new, :create]
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
      get 'community', to: 'community#index'
      get '/:id/share', to: 'email#new'
      post '/:id/share', to: 'email#create'
+     get 'advanced', to: 'advanced#index'
    end
    resources :obituaries
    get '/search', to: 'search#index'
