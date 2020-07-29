@@ -12,5 +12,7 @@
   </div>
   <hr>
 <% end %>
-<%= will_paginate @obituaries %>
+  <div class="pagination">
+    <%= will_paginate @obituaries, renderer: BootstrapPagination::Rails %>
+  </div>
 </div>
