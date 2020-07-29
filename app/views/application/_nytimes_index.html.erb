@@ -1,0 +1,24 @@
+  <table class="table table-sm table-bordered table-striped" id="nytimes-table">
+    <thead class='thead-dark'>
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Headline</th>
+        <th scope="col">Date</th>
+        <th scope="col">Lead Paragraph</th>
+        <th scope="col">Word Count</th>
+        <th scope="col">URL</th>
+      </tr>
+    </thead>
+    <tbody style= "background-color:white;">
+      <% @obituaries_api.each do |obit| %>
+        <tr id="obituary_by_name">
+          <td id="image"><%= image_tag(obit.image) %></td>
+          <td id="headline" class="align-middle pl-3"><%= obit.headline %></td>
+          <td id="pub_date" class="align-middle pl-3"><%= obit.pub_date %></td>
+          <td id="abstract" class="align-middle pl-3"><%= obit.abstract %></td>
+          <td id="word_count" class="align-middle pl-3"><%= obit.word_count %></td>
+          <td id="web_url" class="align-middle pl-3"><%= link_to obit.web_url, obit.web_url %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

@@ -91,7 +91,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
-    domain: 'https://obituary-hub.herokuapp.com/,
+    domain: 'https://obituary-hub.herokuapp.com/',
     address:        "smtp.sendgrid.net",
     port:            587,
     authentication: :plain,
