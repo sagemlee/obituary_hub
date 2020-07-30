@@ -161,8 +161,9 @@ Future iterations:
 
 For testing we used RSpec with [Capybara](https://github.com/teamcapybara/capybara), [Shoulda-Matchers](https://github.com/thoughtbot/shoulda-matchers), [FactoryBot](https://github.com/thoughtbot/factory_bot_rails) and [Faker](https://github.com/faker-ruby/faker) gems, as well as [SimpleCov](https://github.com/colszowka/simplecov) to determine our test coverage and pinpoint areas that were overlooked.
 
-As of writing this, our test coverage is INSERT PERCENT.
-Badges for testing from TravisCI???
+As of writing this, our test coverage is 99.7%.
+
+![TravisCI Badge](/public/travis_badge.png)
 
 ## Development Implementation Instructions <a name="instructions"></a>
 
