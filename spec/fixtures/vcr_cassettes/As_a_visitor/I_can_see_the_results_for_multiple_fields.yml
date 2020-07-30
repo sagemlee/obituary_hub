@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://obituary-microservice.herokuapp.com/advanced?date=2020&name=Bill
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/html;charset=utf-8
+      Content-Length:
+      - '426'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - WEBrick/1.4.2 (Ruby/2.6.6/2020-03-31)
+      Date:
+      - Thu, 30 Jul 2020 16:03:15 GMT
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"data":{"type":"obituary","attributes":{"headline":"Photographs by
+        Bill Ray","abstract":"Mr. Ray, who died at 83, was one of the last staff photographers
+        for the weekly Life magazine.","web_url":"https://www.nytimes.com/slideshow/2020/01/27/obituaries/photographs-by-bill-ray.html","pub_date":"2020-01-27T20:17:00+0000","word_count":0,"image":"images/2020/01/30/obituaries/30ray-3/27billray-slide-0I5W-thumbStandard.jpg"}}}]'
+  recorded_at: Thu, 30 Jul 2020 16:03:15 GMT
+recorded_with: VCR 6.0.0

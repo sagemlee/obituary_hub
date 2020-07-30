@@ -2,9 +2,9 @@
   <div class="col-sm-9 col-md-7 col-lg-8 mx-auto">
     <br><h1 class="card-title text-center">Advanced Search Options</h1>
     <div class="card card-search my-5">
-      <%= form_tag "/obituaries/advanced", method: :get, class: 'submit-form' %>
+      <%= form_tag "/search/results", method: :get, class: 'submit-form' %>
         <div class="card-body" style= "background-color:white; text-align:center;">
-          <p class="card-title">Use this form to search a single field or multiple fields.</p>
+          <p class="card-title">Use this form to search a single field or multiple fields.<br>Results from The New York Times will only be included for searches with name and/or year.</p>
           <div class="form-group-search row">
             <div class="col col-form-label-lg">
                 <%= label_tag 'Name'%>
@@ -14,38 +14,25 @@
 
           <div class="form-group-search row">
             <div class="col col-form-label-lg">
-              <%= label_tag 'City' %>
-              <%= text_field_tag :city, nil, placeholder: 'Search by City', class: "form-control" %>
-            </div>
-          </div>
-
-          <div class="form-group-search row">
-            <div class="col col-form-label-lg" >
-              <%= label_tag :state %>
-              <%= select_tag :state, options_for_select(us_states), {class: 'custom-select' }  %>
+              <%= label_tag 'Location' %>
+              <%= text_field_tag :location, nil, placeholder: 'Search by Location', class: "form-control" %>
             </div>
           </div>
 
           <div class="form-group-search row" id="age-select">
             <div class="col col-form-label-lg" >
               <%= label_tag :age %>
-              <%= select_tag :age, options_for_select((0..150), 100), {class: 'custom-select' } %>
+              <%= select_tag :age, options_for_select((0..150), { }), {class: 'custom-select' } %>
             </div>
           </div>
 
           <div class="form-group-search row" id="year-select">
             <div class="col col-form-label-lg" >
               <%= label_tag :year %>
-              <%= select_tag :year, options_for_select((1981..2020), 2020), {class: 'custom-select' } %>
+              <%= select_tag :year, options_for_select(([0, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]), { }), {class: 'custom-select' } %>
             </div>
           </div>
 
-          <div class="form-group-search row" id="source-select">
-            <div class="col col-form-label-lg" >
-              <%= label_tag :source %>
-              <%= select_tag :source, options_for_select(["ObituaryHub Community", "The New York Times"]), {class: 'custom-select' }  %>
-            </div>
-          </div><br>
           <div class="advanced_search">
             <button class="btn btn-submit btn-lg btn-dark btn-primary btn-block text-uppercase" type="submit" id="submit">Search</button>
           </div>

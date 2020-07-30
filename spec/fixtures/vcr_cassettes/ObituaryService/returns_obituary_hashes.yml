@@ -33,7 +33,7 @@ http_interactions:
       Server:
       - WEBrick/1.4.2 (Ruby/2.6.6/2020-03-31)
       Date:
-      - Wed, 29 Jul 2020 16:34:29 GMT
+      - Thu, 30 Jul 2020 16:05:29 GMT
       Via:
       - 1.1 vegur
     body:
@@ -85,5 +85,5 @@ http_interactions:
         L. Smith Dies; Mystery Writer Was 46","abstract":"LEAD: Terrence Lore Smith,
         an author of mystery novels, died Wednesday in a traffic accident. He was
         46 years old and lived in Woodland Park, Colo.","web_url":"https://www.nytimes.com/1988/12/09/obituaries/terrence-l-smith-dies-mystery-writer-was-46.html","pub_date":"1988-12-09T05:00:00+0000","word_count":194,"image":null}}}]'
-  recorded_at: Wed, 29 Jul 2020 16:34:29 GMT
+  recorded_at: Thu, 30 Jul 2020 16:05:29 GMT
 recorded_with: VCR 6.0.0
