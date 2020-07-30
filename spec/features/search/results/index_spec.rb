@@ -75,7 +75,7 @@ describe "As a visitor" do
     end
   end
 
-    it "I can see the results for a locaton" do
+    it "I can see the results for a locaton", :vcr do
       user = create(:user)
       obituary = Obituary.create!({
         first_name: "Bill",
@@ -106,7 +106,7 @@ describe "As a visitor" do
       expect(page).to have_content(obituary.location)
     end
 
-    it "I can see the result for an age" do
+    it "I can see the result for an age", :vcr do
       user = create(:user)
       obituary = Obituary.create!({
         first_name: "Bill",
@@ -148,9 +148,8 @@ describe "As a visitor" do
         image_url: Faker::Fillmurray.image,
         user_id: user.id
         })
-
+        
       visit '/'
-
       click_on "Advanced Search Options"
 
       expect(current_path).to eq('/search/advanced')
@@ -168,4 +167,6 @@ describe "As a visitor" do
       expect(page).to have_content(obituary.name)
       expect(page).to have_content(obituary.location)
     end
+
+
   end
