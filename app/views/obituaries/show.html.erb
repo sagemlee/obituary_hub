@@ -11,7 +11,7 @@
 
     <div class="col-md-6">
       <h3 class="my-3">Obituary</h3>
-      <p><%= @obituary.description %></p>
+      <p class="description"><%= simple_format(@obituary.description)%></p>
       <h3 class="my-3">Details</h3>
       <ul class="no-bullets">
         <li><b>Age: </b><%= @obituary.age %></li>
@@ -23,7 +23,11 @@
         <% end %>
       </ul>
       </div>
-      <a class="btn btn-dark"  href= <%= "/obituaries/#{@obituary.id}/share" %>>Share this Obituary in an Email</a>
+      <%if @user.nil? %>
+        <a class="btn btn-dark"  href= <%= "/login" %>>Log in to send this Obituary in an Email</a>
+      <%else%>
+        <a class="btn btn-dark"  href= <%= "/obituaries/#{@obituary.id}/share" %>>Share this Obituary in an Email</a>
+      <%end%>
       <br>
       </div>
       <br>

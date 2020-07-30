@@ -25,4 +25,5 @@ Rails.application.routes.draw do
     get '/:id/share', to: 'email#new'
     post '/:id/share', to: 'email#create'
   end
+  get '/404', to: "errors#not_found"
 end
