@@ -1,6 +1,7 @@
 <div class="container">
-<% cache(action: "index", action_suffix: "obituaries_index") do %>
+
   <% @obituaries.each do |obit| %>
+  <% cache(obit) do %>
     <div class="row" style= "background-color:white;">
       <div class="col-md-3 p-4">
         <%= link_to image_tag(obit.image_url, width: 150), "/obituaries/#{obit.id}" %>
