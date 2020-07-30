@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://obituary-microservice.herokuapp.com/advanced/year?date=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: 'Not Found '
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/html;charset=utf-8
+      X-Cascade:
+      - pass
+      Content-Length:
+      - '18'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server:
+      - WEBrick/1.4.2 (Ruby/2.6.6/2020-03-31)
+      Date:
+      - Thu, 30 Jul 2020 19:28:49 GMT
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: GET /advanced/year
+  recorded_at: Thu, 30 Jul 2020 19:28:49 GMT
+recorded_with: VCR 6.0.0

@@ -23,6 +23,7 @@ class ObituarySearch
 
   def advanced_query(params)
     params = parse_params(params)
+
     if params.keys.include?(:name) && params.keys.include?(:year)
       json = ObituaryService.new.advanced_search_name_and_year(params[:name], params[:year])
     elsif params.keys.include?(:name) || params.keys.include?(:year)
@@ -32,6 +33,7 @@ class ObituarySearch
         json = ObituaryService.new.advanced_search_year(params[:year])
       end
     end
+
     if json.present?
       json.map do |obituary_data|
         ApiObituary.new(obituary_data)
@@ -55,15 +57,16 @@ class ObituarySearch
   end
 
   def parse_params(params)
+
     query_params = {}
     params.each do |attribute, query|
       if attribute == "name" && query != ""
         query_params[:name] = query
-      elsif attribute == "year" && query != "0"
+      elsif attribute == "year" && query != ""
         query_params[:year] = query
       elsif attribute == "location" && query != ""
         query_params[:location] = query
-      elsif attribute == "age" && query != "0"
+      elsif attribute == "age" && query != ""
         query_params[:age] = query
       end
     end
