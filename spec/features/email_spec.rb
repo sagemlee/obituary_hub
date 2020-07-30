@@ -30,5 +30,13 @@ RSpec.describe 'User can send emails' do
     expect(current_path).to eq("/obituaries/#{obit.id}")
     expect(page).to have_content("You Have Successfully Shared this Obituary in Email")
   end 
+
+  it 'Cannot send email if not registered user' do 
+    obit = create(:obituary)
+    visit "obituaries/#{obit.id}"
+    expect(page).to_not have_button('Share this Obituary in an Email')
+    click_on 'Log in to send this Obituary in an Email'
+    expect(current_path).to eq('/login')
+  end 
 end 
 
