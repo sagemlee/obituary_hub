@@ -2,7 +2,7 @@
 <% @obituaries.each do |obit| %>
   <div class="row" style= "background-color:white;">
     <div class="col-md-3 p-4">
-      <%= link_to image_tag(obit.image_url), "/obituaries/#{obit.id}" %>
+      <%= link_to image_tag(obit.image_url, width: 200), "/obituaries/#{obit.id}"  %>
     </div>
     <div class="col-md-9 p-4">
       <h3><%= "#{obit.first_name} #{obit.last_name}" %></h3>
