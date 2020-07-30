@@ -15,10 +15,10 @@ describe "As a visitor" do
     expect(current_path).to eq('/obituaries/community')
     
     expect(page).to have_content(obituary.first_name)
-    expect(page).to have_content(obituary.description)
+    expect(page).to have_content(obituary.description.first(200))
     expect(page).to have_content(obituary2.first_name)
-    expect(page).to have_content(obituary2.description)
+    expect(page).to have_content(obituary2.description.first(200))
     expect(page).to have_content(obituary3.first_name)
-    expect(page).to have_content(obituary3.description)
+    expect(page).to have_content(obituary3.description.first(200))
   end
 end
