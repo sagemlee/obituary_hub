@@ -17,6 +17,7 @@ class ObituariesController < ApplicationController
   end
 
   def show
+    @user = current_user
     @obituary = Obituary.find(params[:id])
   end
 
