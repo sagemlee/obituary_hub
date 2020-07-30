@@ -25,7 +25,11 @@
         <% end %>
       </ul>
       </div>
-      <a class="btn btn-dark"  href= <%= "/obituaries/#{@obituary.id}/share" %>>Share this Obituary in an Email</a>
+      <%if @user.nil? %>
+        <a class="btn btn-dark"  href= <%= "/login" %>>Log in to send this Obituary in an Email</a>
+      <%else%>
+        <a class="btn btn-dark"  href= <%= "/obituaries/#{@obituary.id}/share" %>>Share this Obituary in an Email</a>
+      <%end%>
       <br>
       </div>
       <br>
