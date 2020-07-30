@@ -13,7 +13,7 @@
   <% cache(action: "index", action_suffix: "obituaries_index") do %>
     <% @obituaries.each do |obit| %>
       <tr id="obit-<%= obit.id %>">
-        <td><%= link_to image_tag(obit.image_url, size: "50x50"), "/obituaries/#{obit.id}" %></td>
+        <td><%= link_to image_tag(obit.image_url, width: 75), "/obituaries/#{obit.id}" %></td>
         <td class="align-middle pl-3"><%= obit.name %></td>
         <td class="align-middle pl-3"><%= obit.date %></td>
         <td class="align-middle pl-3"><%= obit.location %></td>
