@@ -20,6 +20,8 @@ gem 'jquery-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'sprockets-rails'
 gem 'bootstrap', '~> 4.0.0'
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
 
 group :test do
   gem 'webmock'
@@ -61,4 +63,3 @@ gem 'omniauth-facebook'
 gem 'figaro'
 gem 'sendgrid-ruby'
 gem 'omniauth-google-oauth2'
-
