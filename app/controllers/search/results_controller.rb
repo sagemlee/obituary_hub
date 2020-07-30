@@ -8,5 +8,6 @@ class Search::ResultsController < ApplicationController
     results = ObituarySearch.new.advanced_query_local(params)
     @obituaries = Obituary.find(results)
     @obituaries_api = ObituarySearch.new.advanced_query(params) || []
+    
   end
 end

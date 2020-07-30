@@ -181,4 +181,14 @@ describe "As a visitor" do
       expect(current_path).to eq('/search/advanced')
       expect(page).to have_content("Please fill out a field below")
     end
+
+    # it "will go back to search page if no results are found" do
+    #   visit '/'
+    #   click_on "Advanced Search Options"
+    #
+    #   expect(current_path).to eq('/search/advanced')
+    #
+    #   fill_in "Search by Name", with: "George", id: "name_id"
+    #
+    # end
   end
