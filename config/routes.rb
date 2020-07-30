@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     get '/profile', to: "users#show"
     resources :users, only: [:new, :create]
-    
+
     namespace :obituaries do
       get 'covid-19', to: 'covid#index'
       get 'recent', to: 'recent#index'
@@ -19,13 +19,14 @@ Rails.application.routes.draw do
 
     resources :obituaries
 
-    scope module: 'obituaries', path: 'obituaries' do 
+    scope module: 'obituaries', path: 'obituaries' do
       get '/:id/share', to: 'email#new'
       post '/:id/share', to: 'email#create'
     end
-    
+
     get '/search', to: 'search#index'
     namespace :search do
       get 'advanced', to: 'advanced#index'
    end
+   get '/resources', to: 'resources#index'
 end
