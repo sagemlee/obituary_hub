@@ -36,7 +36,7 @@ describe "ObituaryService" do
     service = ObituaryService.new
     name = "George"
     year = 2019
-    obituaries = service.get_advanced_obituaries(name, year)
+    obituaries = service.advanced_search_name_and_year(name, year)
 
     expect(obituaries).to be_a Array
     expect(obituaries.first).to be_a Hash
