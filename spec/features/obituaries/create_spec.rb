@@ -100,6 +100,6 @@ describe "As a visitor" do
   it "I cannot access the obituary create form" do
     obituary = create(:obituary)
     visit new_obituary_path(obituary.id)
-    expect(page).to have_content('The page you were looking for doesn\'t exist (404)')
+    expect(page).to have_content("The page you are looking for does not exist")
   end
 end

@@ -51,7 +51,7 @@ describe "As a registered user" do
     visit obituary_path(obituary2.id)
     expect(page).to_not have_content("Edit")
     visit edit_obituary_path(obituary2.id)
-    expect(page).to have_content('The page you were looking for doesn\'t exist (404)')
+    expect(page).to have_content('The page you are looking for does not exist')
   end
 end
 
@@ -65,6 +65,6 @@ describe "As a visitor" do
   it "I cannot access the obituary edit form" do
     obituary = create(:obituary)
     visit edit_obituary_path(obituary.id)
-    expect(page).to have_content('The page you were looking for doesn\'t exist (404)')
+    expect(page).to have_content('The page you are looking for does not exist')
   end
 end
