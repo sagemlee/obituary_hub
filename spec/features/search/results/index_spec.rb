@@ -35,7 +35,7 @@ describe "As a visitor" do
     end
   end
 
-  xit "I can see the results from NYT for just a year", :vcr do
+  it "I can see the results from NYT for just a year", :vcr do
     visit '/'
 
     click_on "Advanced Search Options"
