@@ -49,7 +49,7 @@ class ObituarySearch
     elsif params.keys.include?(:age)
       query_results << Obituary.where("age = ?", "#{params[:age]}").pluck(:id)
     elsif params.keys.include?(:year)
-      query_results << Obituary.where("created_at ILIKE ?", "%#{params[:year]}%").pluck(:id)
+      query_results << Obituary.where("extract(year from created_at) = ?", params[:year]).pluck(:id)
     end
     query_results.flatten.uniq
   end

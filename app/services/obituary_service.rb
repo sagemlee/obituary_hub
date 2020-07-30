@@ -30,7 +30,7 @@ class ObituaryService
   end
 
   def advanced_search_year(year)
-    resp = conn.get('/advanced') do |req|
+    resp = conn.get('/advanced/year') do |req|
       req.params['date'] = year.to_i
     end
     JSON.parse(resp.body, symbolize_names: true)
