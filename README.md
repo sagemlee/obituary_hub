@@ -20,9 +20,9 @@ When we originally discussed what our Minimum Viable Product would include, and 
 
 ### Successes
 
-**[Microservice](#microservice)
+[Microservice](#microservice)
 
-**[Caching](#optimization)
+[Caching](#optimization)
 
 **Email service**
 
@@ -60,7 +60,7 @@ This is still a work in progress and there are definitely still many bugs. For e
 
 ## Schema
 
-![Schema](/public/images/schema.png)
+![Schema](/public/schema.png)
 
 ## Design Strategy
 
