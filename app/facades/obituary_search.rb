@@ -27,7 +27,6 @@ class ObituarySearch
     if params.keys.include?(:name) && params.keys.include?(:year)
       json = ObituaryService.new.advanced_search_name_and_year(params[:name], params[:year])
     elsif params.keys.include?(:name) || params.keys.include?(:year)
-      binding.pry
       if params[:name]
         json = ObituaryService.new.get_obituaries_by_name(params[:name])
       elsif params[:year]
