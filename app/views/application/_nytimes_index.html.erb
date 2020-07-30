@@ -10,8 +10,9 @@
       </tr>
     </thead>
     <tbody style= "background-color:white;">
-      <% cache(action: "index", action_suffix: "obituaries_nyt") do %>
+
         <% @obituaries_api.each do |obit| %>
+        <% cache(obit) do %>
           <tr id="obituary_by_name">
             <td id="image"><%= image_tag(obit.image) %></td>
             <td id="headline" class="align-middle pl-3"><%= obit.headline %></td>
