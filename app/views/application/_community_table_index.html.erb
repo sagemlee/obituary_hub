@@ -10,6 +10,7 @@
     </tr>
   </thead>
   <tbody style= "background-color:white;">
+  <% cache(action: "index", action_suffix: "obituaries_index") do %>
     <% @obituaries.each do |obit| %>
       <tr id="obit-<%= obit.id %>">
         <td><%= link_to image_tag(obit.image_url, width: 75), "/obituaries/#{obit.id}" %></td>
@@ -20,5 +21,6 @@
         <td class="align-middle pl-3"><%= "ObituaryHub Community" %></td>
       </tr>
     <% end %>
+  <% end %>
   </tbody>
 </table>
