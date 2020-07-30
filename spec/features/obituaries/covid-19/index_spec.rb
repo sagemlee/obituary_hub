@@ -16,9 +16,9 @@ describe "As a visitor" do
     expect(current_path).to eq('/obituaries/covid-19')
 
     expect(page).to have_content(obituary.first_name)
-    expect(page).to have_content(obituary.description.first(200))
+    expect(page.html).to have_content(obituary.description.first(200))
     expect(page).to_not have_content(obituary2.first_name)
-    expect(page).to_not have_content(obituary2.description.first(200))
+    expect(page.html).to_not have_content(obituary2.description.first(200))
   end
 
   it "I can see the covid obituaries from the api", :vcr do
