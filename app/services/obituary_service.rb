@@ -1,7 +1,7 @@
 class ObituaryService
 
   def get_obituaries
-    JSON.parse(conn.get.body, symbolize_names: true)
+    JSON.parse(conn.get('/api/v1/').body, symbolize_names: true)
   end
 
   def get_covid_obituaries
