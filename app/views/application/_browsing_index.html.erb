@@ -14,4 +14,7 @@
     <hr>
   <% end %>
 <% end %>
+  <div class="pagination">
+    <%= will_paginate @obituaries, renderer: BootstrapPagination::Rails %>
+  </div>
 </div>
