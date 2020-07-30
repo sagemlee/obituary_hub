@@ -148,7 +148,7 @@ describe "As a visitor" do
         image_url: Faker::Fillmurray.image,
         user_id: user.id
         })
-        
+
       visit '/'
       click_on "Advanced Search Options"
 
@@ -168,5 +168,17 @@ describe "As a visitor" do
       expect(page).to have_content(obituary.location)
     end
 
+    it "goes back to search page if nothing is filled out" do
+      visit '/'
+      click_on "Advanced Search Options"
 
+      expect(current_path).to eq('/search/advanced')
+
+      within ".advanced_search" do
+        click_on 'Search'
+      end
+
+      expect(current_path).to eq('/search/advanced')
+      expect(page).to have_content("Please fill out a field below")
+    end
   end
