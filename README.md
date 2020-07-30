@@ -17,10 +17,11 @@
   13. [Testing](#testing)
   14. [Development Implementation Instructions](#instructions)
   15. [Project Board](#project)
-  
+
 ## Introduction <a name="intro"></a>
 
 [ObituaryHub](https://obituary-hub.herokuapp.com/) is a Ruby on Rails application, built by students in Module 3 (of 4) at Turing School of Software and Design in Denver, CO.
+
 It was inspired by the COVID-19 pandemic and the climbing death toll in the United States, as well as the abundance of obituaries being published in honor of victims of COVID-19. Because of the pandemic, we as a society are being forced to deal with the overwhelming death toll in isolation; there are few opportunities to express our grief collectively. The obituary, already a weighty document, has become an essential way that we are able to communicate our grief and to invite others to join us in mourning as well as celebrate the lives of those we've lost.
 
 Many of us can think back to our childhood when our parents or grandparents would read the obituary section of the newspaper, discuss people in the community who had passed away, send condolences to friends and family with whom we were acquainted, and make plans to attend a funeral or memorial. Today, we often find out that friends, family, and community members have passed away on Facebook. It is traumatic to discover a loved one has died while scrolling through the Facebook newsfeed, sifting through ads, politial posts, and memes.
@@ -95,7 +96,7 @@ Our database is extremely simple for this project, since we are sourcing a lot o
 
 Since this was a school project, we tried our best to demonstrate our understanding of the 4 Pillars of Object Oriented Programming as well as ReSTful APIs and ReSTful routes. Evidence of these efforts can be found in the encapsulation of our microservice, our use of partials for rendering the different views, and our adherence to MVC. Within the Turing community, MVC means "skinny controllers" and "bulkier models"; therefore, we pushed all logic into models (as well as poros and facades).
 
-All our API endpoints (found below) are ReSTful, compliant with the JSON API spec through the use of serializers, and exposed under an api/v1 namespace. Versioning will come in handy as this project continues to expand; when we make changes to the API down the road, we will be able to distinguish those changes using a `v2` namespace.
+All our API endpoints are ReSTful, compliant with the JSON API spec through the use of serializers, and exposed under an api/v1 namespace. Versioning will come in handy as this project continues to expand; when we make changes to the API down the road, we will be able to distinguish those changes using a `v2` namespace.
 
 It is our understanding that the emphasis on ReSTful architecture at Turing is because this makes our app easier for both end users and developers to engage with. Following best practices isn't just a flex - it is an act of kindness.
 
