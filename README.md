@@ -44,7 +44,7 @@ When we originally discussed what our Minimum Viable Product would include and w
 
 From a technical and academic standpoint, this project was a success. However, it is much more significant to us that we succeeded in building something that is meaningful and that we believe brings value to our users and our society. Software is built by human beings and for human beings. At times, it is easy to lose sight of this fact and become ensnared in the code, forgetting the end user; this is especially true for us a Back End developers. This project gave us an opportunity to deeply think about and connect with our end users, and this experience will certainly inform the trajectory our careers take after our graduation from Turing.
 
-All this said, there are still things that we want to improve and expand. We have elaborated on these in the section titled [Challenges](#challenges)
+All this said, there are still things that we want to improve and expand. We have elaborated on these in the section titled [Challenges](#challenges).
 
 ### Successes <a name="successes"></a>
 
@@ -141,6 +141,7 @@ All requests below are tacked onto the end of this root URL: [https://api.nytime
 
 The requirements of this project dictated we needed to implement one of three different types of optimization. We chose to focus on caching. All obituaries from our database are cached so that when a page is reloaded of the obituary appears on another page the results have already been cached and the website loads quickly because it is not making a redundant request of our database. The caching portion of our project was implemented single-handedly by [Eric Larson](https://github.com/EricLarson2020).
 
+Another example of optimization in this project is pagination. [Jack Cullen](https://github.com/jpc20) implemented pagination ousing the `will-paginate` gem. 
 ## Extensions <a name="extensions"></a>
 
 The extensions that we were able to complete include:
