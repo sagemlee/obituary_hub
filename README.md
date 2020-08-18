@@ -54,7 +54,7 @@ All this said, there are still things that we want to improve and expand. We hav
 
 **Email service**
 
-  Using the Sendgrid API in conjunction with Rails mailers, we are able to send emails on behalf of our users. When you visit the show page for a particular you should see a button to share the obituary with someone else. This button takes you to a form where you add your email and the email address of the person you want to share the obituary with. When you hit submit, we automatically send an email to that person. This piece of functionality was completed by [Sage Lee](https://github.com/sagemlee).
+  Using the Sendgrid API in conjunction with Rails mailers, we are able to send emails on behalf of our users. When you visit the show page for a particular obituary you should see a button to share the obituary with someone else. This button takes you to a form where you add your email and the email address of the person you want to share the obituary with. When you hit submit, we automatically send an email to that person. This piece of functionality was completed by [Sage Lee](https://github.com/sagemlee).
 
 **Javascript**
 
